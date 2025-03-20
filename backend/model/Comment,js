@@ -1,0 +1,44 @@
+const mongoose = require("mongoose");
+
+const commentSchema = mongoose.Schema(
+  {
+    content: {
+      type: String,
+      required: true,
+    },
+    author: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User",
+      required: true,
+    },
+    post: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Post",
+      required: true,
+    },
+    // Reference either a blog post or social post
+    post: {
+      type: mongoose.Schema.Types.ObjectId,
+      refPath: "onModel",
+      required: true,
+    },
+    onModel: {
+      type: String,
+      required: true,
+      enum: ["Blog", "Post"],
+    },
+    parent: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Comment",
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+const Comment = mongoose.model("Comment", commentSchema);
+module.exports = Comment;
