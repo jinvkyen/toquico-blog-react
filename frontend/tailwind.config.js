@@ -102,7 +102,7 @@ export default {
       },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
-        varuna: ["Varuna", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
       },
     },
   },

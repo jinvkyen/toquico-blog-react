@@ -29,7 +29,7 @@ function App() {
       {/* <AuthProvider> */}
       <Router>
         <Header />
-        <main className='min-h-screen pt-16 pb-8 bg-toquiMute'>
+        <main className='min-h-screen pt-16 pb-8 bg-gradient-to-b from-pink-50 to-purple-50'>
           <Routes>
             {/* Public Routes */}
             <Route path='/' element={<LandingPage />} />
