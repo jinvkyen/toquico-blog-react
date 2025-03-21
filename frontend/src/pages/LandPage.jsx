@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
-    <div className='min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 p-4 md:p-8 font-satoshi'>
+    <div className='min-h-screen bg-transparent p-4 md:p-8 font-satoshi'>
       {/* Hero Section as Bento Grid */}
-      <section className='container mx-auto mb-12'>
+      <section className='container mx-auto mb-12 py-4'>
         <div className='grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6'>
           {/* Main Hero Content */}
           <div className='md:col-span-7 bg-white p-8 rounded-3xl shadow-md relative overflow-hidden'>
             <div className='absolute -left-6 -top-6 h-16 w-16 bg-pink-200 rounded-full opacity-50'></div>
             <h1 className='text-3xl md:text-4xl leading-tight font-bold text-gray-800 relative mb-4'>
               Welcome to{" "}
-              <span className='bg-gradient-to-r from-toquiPrimary to-toquiDark bg-clip-text text-transparent'>
+              <span className='font-black bg-gradient-to-r from-toquiPrimary to-toquiDark bg-clip-text text-transparent'>
                 Toqui Co.
               </span>
             </h1>
@@ -27,7 +27,7 @@ const LandingPage = () => {
                 Join Community
               </button>
               <button className='px-6 py-3 border border-pink-300 text-pink-500 font-medium rounded-full hover:bg-pink-50 transition-colors'>
-                Explore Blog
+                Explore Toqui's Journey
               </button>
             </div>
           </div>
@@ -36,10 +36,10 @@ const LandingPage = () => {
           <div className='md:col-span-5 p-6 rounded-3xl flex items-center justify-center'>
             <div className='relative'>
               <div className='w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-xl'>
-                <img src='/assets/images/hero-toqs.png' alt='Toquipush' className='h-full w-full object-cover' />
+                <img src='/assets/images/hero-toqs.jpg' alt='Toquipush' className='h-full w-full object-cover' />
               </div>
               <div className='absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg'>
-                <Heart size={42} weight='fill' className='text-pink-500' />{" "}
+                <Heart size={62} weight='fill' className='text-red-500' />{" "}
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import HomePage from "./pages/HomePage";
 import BlogListPage from "./pages/blog/BlogListPage";
 import BlogDetailPage from "./pages/blog/BlogDetailPage";
 import LoginPage from "./pages/auth/LoginPage";
+import TimelineTab from "./pages/home/tabs/TimelineTab"
 
 // Requires registration
 import RegisterPage from "./pages/auth/RegisterPage";
@@ -29,11 +30,12 @@ function App() {
       {/* <AuthProvider> */}
       <Router>
         <Header />
-        <main className='min-h-screen pt-16 pb-8 bg-gradient-to-b from-pink-50 to-purple-50'>
+        <main className='min-h-screen pt-16 pb-8 bg-gradient-to-b from-toquiPrimary/70 to-yellow-50'>
           <Routes>
             {/* Public Routes */}
             <Route path='/' element={<LandingPage />} />
             <Route path='/home' element={<HomePage />} />
+            <Route path='/timeline' element={<TimelineTab />} />
             <Route path='/blog' element={<BlogListPage />} />
             <Route path='/blog/:id' element={<BlogDetailPage />} />
             <Route path='/login' element={<LoginPage />} />

@@ -1,8 +1,17 @@
+import React from "react";
+import { MarqueeA } from "../components/with-motion/MarqueeA"
+import { Navbar } from "@/components/with-motion/Navbar";
+import Contents from "./home/Contents";
+
 function HomePage() {
   return (
-    <div className='p-4'>
-      <h1 className='text-4xl font-bold'>Welcome to the Home Page</h1>
-      <p>This is the content of the Home page.</p>
+    <div className='min-h-screen bg-transparent font-satoshi'>
+      {/* Marquee */}
+        <MarqueeA/>
+      <section className='container mx-auto mb-12'>
+        <Navbar />
+        <Contents/>
+      </section>
     </div>
   );
 }
