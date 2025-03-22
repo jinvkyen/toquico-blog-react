@@ -30,7 +30,7 @@ function App() {
       {/* <AuthProvider> */}
       <Router>
         <Header />
-        <main className='min-h-screen pt-16 bg-gradient-to-b from-toquiPrimary/65 to-yellow-50'>
+        <main className='min-h-screen pt-16 bg-gradient-to-b from-toquiPrimary/70 to-yellow-50'>
           <Routes>
             {/* Public Routes */}
             <Route path='/' element={<LandingPage />} />
@@ -62,8 +62,8 @@ function App() {
             {/* 404 Route */}
             <Route path='*' element={<NotFoundPage />} />
           </Routes>
-        </main>
         <Footer />
+        </main>
       </Router>
       {/* </AuthProvider> */}
     </QueryClientProvider>

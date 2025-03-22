@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 function NotFoundPage() {
   return (
-    <div className='container mx-auto font-satoshi mt-32 px-0 flex flex-col items-center'>
+    <div className='container mx-auto font-satoshi py-32 px-0 flex flex-col items-center'>
       <h1 className='text-6xl font-bold text-bgMain text-center'>404</h1>
       {/* add 404 image */}
       <h2 className='text-3xl font-bold text-bgMain text-center'>Page Not Found</h2>

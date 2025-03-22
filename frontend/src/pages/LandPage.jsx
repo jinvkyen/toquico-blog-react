@@ -10,24 +10,22 @@ const LandingPage = () => {
       {/* Hero Section */}
       <div className='flex flex-wrap mb-10 justify-around'>
         <div className='w-full xl:w-6/12'>
-          <div className='container mx-auto h-full sm:p-10'>
+          <div className='container mx-auto h-full md:p-10 p-0'>
             <nav className='flex px-4 justify-between items-center'></nav>
             <header className='container px-4 lg:flex items-center h-full text-gray-900'>
-              <div className='w-full xl:-ml-12'>
-                <h1 className='text-3xl lg:text-6xl font-bold'>
-                  Your friendly neighborhood <span className='text-white'>fluff</span> butt 🐰
+              <div className='w-auto xl:-ml-14 mt-12 md:mt-0'>
+                <h1 className='text-3xl md:4xl lg:text-5xl font-bold leading-tight mb-4'>
+                  A cozy hub for <span className='text-white border-white border-b-8'>fluff butt </span> care and
+                  cuteness 🐇
                 </h1>
-                <div className='w-20 xl:w-32 h-2 bg-white my-4'></div>
                 <p className='text-lg mb-10'>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores neque eaque ea odit
-                  placeat, tenetur illum distinctio nulla voluptatum a corrupti beatae tempora aperiam quia id aliquam
-                  possimus aut.
+                  Welcome to your go-to space for all things bunny! Whether you're a new rabbit parent or a seasoned
+                  bunny lover, this cozy hub is packed with tips, care guides, and heart-melting fluff butt moments.
                 </p>
               </div>
             </header>
           </div>
         </div>
-        {/* <img src='/assets/images/hero-toqs.jpg' alt='Toquipush' class='w-full h-48 object-cover sm:h-screen sm:w-6/12 mt-10 md:mt-0' /> */}
         <div className='w-auto items-center justify-center flex flex-col'>
           <Threecard />
         </div>
@@ -148,7 +146,11 @@ const LandingPage = () => {
           <div className='md:col-span-8 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-shadow'>
             <div className='grid grid-cols-1 md:grid-cols-2'>
               <div className='h-48 md:h-full bg-gray-200'>
-                <img src='/api/placeholder/400/400' alt='Blog post' className='h-full w-full object-cover' />
+                <img
+                  src='https://www.theeducatedrabbit.com/images/IMG_6227.jpg'
+                  alt='Blog post'
+                  className='h-full w-full object-cover'
+                />
               </div>
               <div className='p-6 flex flex-col'>
                 <span className='px-3 py-1 text-xs font-medium bg-pink-100 text-pink-500 rounded-full w-fit'>
@@ -173,7 +175,11 @@ const LandingPage = () => {
           {/* Higlights */}
           <div className='md:col-span-4 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-shadow'>
             <div className='h-40 bg-gray-200'>
-              <img src='/api/placeholder/400/200' alt='Blog post' className='h-full w-full object-cover' />
+              <img
+                src='https://rabbit.org/wp-content/uploads/2023/12/vet-exam-4x6-Dr.-Gleeson-examining-Pippin-2-cc-Susan-Stienstra.jpg'
+                alt='Blog post'
+                className='h-full w-full object-cover'
+              />
             </div>
             <div className='p-6'>
               <span className='px-3 py-1 text-xs font-medium bg-purple-100 text-purple-500 rounded-full'>
@@ -185,6 +191,7 @@ const LandingPage = () => {
               </p>
               <div className='mt-4 flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>March 10, 2025</span>
+                {/* Link to */}
                 <a href='#' className='text-pink-500 font-medium hover:text-pink-600'>
                   Read More
                 </a>
@@ -195,7 +202,11 @@ const LandingPage = () => {
           {/* Fun Facts */}
           <div className='md:col-span-5 bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-lg transition-shadow'>
             <div className='h-40 bg-gray-200'>
-              <img src='/api/placeholder/400/200' alt='Blog post' className='h-full w-full object-cover' />
+              <img
+                src='https://bunniesathome.weebly.com/uploads/3/0/1/7/30178425/2170044_orig.png'
+                alt='Blog post'
+                className='h-full w-full object-cover'
+              />
             </div>
             <div className='p-6'>
               <span className='px-3 py-1 text-xs font-medium bg-blue-100 text-blue-500 rounded-full'>Lifestyle</span>
@@ -215,7 +226,7 @@ const LandingPage = () => {
           {/* Testimonial */}
           <div className='md:col-span-7 bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-6 shadow-md flex flex-col justify-center'>
             <div className='flex items-center mb-4'>
-              <div className='h-12 w-12 rounded-full overflow-hidden mr-4'>
+              <div className='h-14 w-14 rounded-full overflow-hidden mr-4'>
                 <img
                   src='https://i.pinimg.com/736x/53/4b/f5/534bf5ef30c7651d980af91510ae9627.jpg'
                   alt='User'
@@ -225,7 +236,7 @@ const LandingPage = () => {
               <div>
                 <h4 className='font-medium text-gray-800'>Suzy Bae</h4>
                 <p className='text-tiny text-gray-500'>Rabbit owner for 5 years</p>
-                <span className='text-sm text-gray-500'>December 18, 2019</span>
+                <span className='text-sm text-gray-500'>November 21, 2019</span>
               </div>
             </div>
             <p className='text-gray-600 italic'>

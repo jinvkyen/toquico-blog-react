@@ -21,7 +21,7 @@ const Footer = () => {
 
         <div>
           <h4 className='font-semibold text-gray-800 mb-4'>Quick Links</h4>
-          <ul className='space-y-2'>
+          <ul className='space-y-2 mb-2'>
             <Link to='/home' className="flex flex-col">
               <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Home
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className='my-4 pt-8 border-t border-gray-200 text-center text-gray-500 text-sm'>
+      <div className='pt-8 pb-2 border-t border-gray-200 text-center text-gray-500 text-sm'>
         <p>&copy; 2025 Toqui's Journey. All rights reserved.</p>
       </div>
     </footer>

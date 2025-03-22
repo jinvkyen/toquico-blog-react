@@ -139,7 +139,7 @@ function Contents() {
       </section>
 
       {/* Video */}
-      <section className='mx-auto flex flex-col items-center justify-center pb-14'>
+      <section className='mx-auto flex flex-col items-center justify-center pb-40'>
         <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
           <span className='text-toquiPrimary font-black'>Fyrst sceawung</span>
         </h2>
