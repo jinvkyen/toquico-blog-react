@@ -30,7 +30,7 @@ function App() {
       {/* <AuthProvider> */}
       <Router>
         <Header />
-        <main className='min-h-screen pt-16 bg-gradient-to-b from-toquiPrimary/70 to-yellow-50'>
+        <main className='min-h-screen pt-16 bg-gradient-to-b from-toquiPrimary/70 to-gray-50'>
           <Routes>
             {/* Public Routes */}
             <Route path='/' element={<LandingPage />} />
