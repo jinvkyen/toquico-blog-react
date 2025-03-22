@@ -1,50 +1,37 @@
 import React from "react";
 import { BellIcon, HeartIcon, MenuIcon, SearchIcon, UserIcon } from "lucide-react";
-import { Heart } from '@phosphor-icons/react'
+import { Heart } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
+import { Threecard } from "@/components/with-motion/threecard";
 
 const LandingPage = () => {
   return (
     <div className='min-h-screen bg-transparent p-4 md:p-8 font-satoshi'>
-      {/* Hero Section as Bento Grid */}
-      <section className='container mx-auto mb-12 py-4'>
-        <div className='grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6'>
-          {/* Main Hero Content */}
-          <div className='md:col-span-7 bg-white p-8 rounded-3xl shadow-md relative overflow-hidden'>
-            <div className='absolute -left-6 -top-6 h-16 w-16 bg-pink-200 rounded-full opacity-50'></div>
-            <h1 className='text-3xl md:text-4xl leading-tight font-bold text-gray-800 relative mb-4'>
-              Welcome to{" "}
-              <span className='font-black bg-gradient-to-r from-toquiPrimary to-toquiDark bg-clip-text text-transparent'>
-                Toqui Co.
-              </span>
-            </h1>
-            <p className='text-lg text-gray-600 mb-6'>
-              A cozy corner of the internet dedicated to my adorable bunny Toqui and a community for rabbit enthusiasts
-              to connect, share, and learn.
-            </p>
-            <div className='flex flex-wrap gap-4'>
-              <button className='px-6 py-3 bg-gradient-to-r from-toquiPrimary to-toquiDark text-white font-medium rounded-full shadow-md hover:shadow-lg transition-shadow'>
-                Join Community
-              </button>
-              <button className='px-6 py-3 border border-pink-300 text-pink-500 font-medium rounded-full hover:bg-pink-50 transition-colors'>
-                Explore Toqui's Journey
-              </button>
-            </div>
-          </div>
-
-          {/* Toqui's Image */}
-          <div className='md:col-span-5 p-6 rounded-3xl flex items-center justify-center'>
-            <div className='relative'>
-              <div className='w-80 h-80 rounded-full overflow-hidden border-4 border-white shadow-xl'>
-                <img src='/assets/images/hero-toqs.jpg' alt='Toquipush' className='h-full w-full object-cover' />
+      {/* Hero Section */}
+      <div className='flex flex-wrap mb-10 justify-around'>
+        <div className='w-full xl:w-6/12'>
+          <div className='container mx-auto h-full sm:p-10'>
+            <nav className='flex px-4 justify-between items-center'></nav>
+            <header className='container px-4 lg:flex items-center h-full text-gray-900'>
+              <div className='w-full xl:-ml-12'>
+                <h1 className='text-3xl lg:text-6xl font-bold'>
+                  Your friendly neighborhood <span className='text-white'>fluff</span> butt 🐰
+                </h1>
+                <div className='w-20 xl:w-32 h-2 bg-white my-4'></div>
+                <p className='text-lg mb-10'>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae maiores neque eaque ea odit
+                  placeat, tenetur illum distinctio nulla voluptatum a corrupti beatae tempora aperiam quia id aliquam
+                  possimus aut.
+                </p>
               </div>
-              <div className='absolute -bottom-4 -right-4 bg-white p-3 rounded-full shadow-lg'>
-                <Heart size={62} weight='fill' className='text-red-500' />{" "}
-              </div>
-            </div>
+            </header>
           </div>
         </div>
-      </section>
+        {/* <img src='/assets/images/hero-toqs.jpg' alt='Toquipush' class='w-full h-48 object-cover sm:h-screen sm:w-6/12 mt-10 md:mt-0' /> */}
+        <div className='w-auto items-center justify-center flex flex-col'>
+          <Threecard />
+        </div>
+      </div>
 
       {/* Features Section as Bento Grid */}
       <section className='container mx-auto mb-12'>

@@ -6,12 +6,12 @@ const AccordionItem = ({ header, text }) => {
     setActive(!active);
   };
   return (
-    <div className='mb-8 w-auto relative md:left-10 md:w-[400px] rounded-lg dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)]'>
+    <div className='mb-8 ml-0 lg:-ml-12 xl:-ml-48 w-auto relative md:left-10 md:w-[450px] rounded-lg dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)]'>
       <button className={`faq-btn flex w-full text-left items-center`} onClick={() => handleToggle()}>
         <div className='w-full'>
-          <p className='mt-1 text-gray-800 font-medium text-dark dark:text-white text-base md:text-lg'>{header}</p>
+          <p className='mt-1 text-gray-800 font-semibold text-dark dark:text-white text-base md:text-lg'>{header}</p>
         </div>
-        <div className='ml-5 flex h-10 w-full max-w-[40px] items-center justify-center rounded-lg text-primary dark:bg-white/5'>
+        <div className='ml-5 flex h-10 w-full max-w-[60px] items-center justify-center rounded-lg text-primary dark:bg-white/5'>
           <svg
             className={`fill-primary stroke-primary duration-200 ease-in-out ${active ? "rotate-180" : ""}`}
             width='17'

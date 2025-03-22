@@ -2,7 +2,9 @@ import { X } from "@phosphor-icons/react";
 import React, { useState, useRef } from "react";
 import { Personalities } from "@/components/with-motion/Personalities";
 import AccordionItem from "@/components/ui/AccordionItem";
-import FlowingMenu from "@/components/with-motion/FlowingMenu";
+import BlogCard from "@/components/ui/BlogCard";
+import CircularGallery from "@/components/with-motion/CircularGallery";
+
 function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
@@ -24,7 +26,7 @@ function Contents() {
             About <span className='text-toquiPrimary font-black'>Her</span>
           </h2>
           <div className='text-gray-800 text-left text-wrap'>
-            <p>
+            <p className='text-base'>
               She was born in a different home, where she lived with her mother and sister. As she grew older, she and
               her sibling were given away by their previous owners. Her new owner bought her just before his
               granddaughter’s birthday. In her new household, her birthday is celebrated on December 18, 2019.
@@ -86,44 +88,65 @@ function Contents() {
             </div>
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-6 place-items-center'>
-            {/* Column 1 */}
-            <div className='col-span-1'>
-              <div className='mx-auto flex flex-wrap'>
-                <div className='w-full flex flex-col justify-center'>
-                  <AccordionItem
-                    header='What are Toqui’s favorite foods?'
-                    text='Timothy hay is Toqui’s absolute favorite—it keeps her teeth healthy and stomach in right shape. She also enjoys fresh and properly washed lettuce, and bananas for treats!'
-                  />
-                  <AccordionItem
-                    header='How often does Toqui eat?'
-                    text='Toqui enjoys a well-balanced diet with meals and snacks throughout the day, keeping energy levels high! 🐰'
-                  />
-                  <AccordionItem
-                    header='Can Toqui eat human food?'
-                    text={
-                      <>
-                        {" "}
-                        Yes, but others can be harmful. Toqui enjoys pet-safe fruits like <b>apples</b> and{" "}
-                        <b>cucumbers</b>, but avoids{" "}
-                        <span className='border-b-2 border-red-600'>
-                          chocolate, onions, and grapes with large seeds.
-                        </span>
-                      </>
-                    }
-                  />
-                  <AccordionItem
-                    header='Are there any foods Toqui doesn’t like?'
-                    text='Nothing. I think she likes everything! (and by everything, I mean everything literally anything she can get her teeth on lol). 🐇'
-                  />
+          <div className='flex items-center justify-center'>
+            <div className='flex items-center justify-between'>
+              <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 place-items-center'>
+                <div className='col-span-1'>
+                  <div className='col-span-1'>
+                    <div className='mx-auto flex flex-wrap'>
+                      <div className='w-full flex flex-col justify-center'>
+                        <AccordionItem
+                          header='What are Toqui’s favorite foods?'
+                          text='Timothy hay is Toqui’s absolute favorite—it keeps her teeth healthy and stomach in right shape. She also enjoys fresh and properly washed lettuce, and bananas for treats!'
+                        />
+                        <AccordionItem
+                          header='How often does Toqui eat?'
+                          text='Toqui enjoys a well-balanced diet with meals and snacks throughout the day, keeping energy levels high! 🐰'
+                        />
+                        <AccordionItem
+                          header='Can Toqui eat human food?'
+                          text={
+                            <>
+                              {" "}
+                              Yes, but others can be harmful. Toqui enjoys pet-safe fruits like <b>apples</b> and{" "}
+                              <b>cucumbers</b>, but avoids{" "}
+                              <span className='border-b-2 border-red-600'>
+                                chocolate, onions, and grapes with large seeds.
+                              </span>
+                            </>
+                          }
+                        />
+                        <AccordionItem
+                          header='Are there any foods Toqui doesn’t like?'
+                          text='Nothing. I think she likes everything! (and by everything, I mean everything literally anything she can get her teeth on lol). 🐇'
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className='col-span-1'>
+                  <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 place-items-center'>
+                    <BlogCard />
+                  </div>
                 </div>
               </div>
             </div>
-            {/* Column 2 */}
-            <div className='col-span-1'><FlowingMenu /></div>
           </div>
         </div>
       </section>
+
+      {/* Gallery */}
+      <section className='py-4 pt-14'>
+        <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] text-center text-toquiPrimary font-black'>
+          Gallery
+        </h2>
+        <div style={{ height: "600px", position: "relative" }}>
+          <CircularGallery bend={3} textColor='#000' borderRadius={0.05} />
+        </div>
+      </section>
+
+      {/* Video */}
+      
     </div>
   );
 }

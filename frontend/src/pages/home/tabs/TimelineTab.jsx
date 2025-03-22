@@ -2,10 +2,10 @@ import HomePage from "@/pages/HomePage";
 
 const TimelineTab = () => {
     return (
-      <div>
+      <section id="timeline" className="min-h-screen">
         <HomePage />
         <p> with timeline</p>
-      </div>
+      </section>
     );
 }
 
