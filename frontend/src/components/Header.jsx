@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-  import { Hamburger, X } from "@phosphor-icons/react";
+import { Hamburger, X } from "@phosphor-icons/react";
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -25,23 +25,25 @@ function Header() {
       <div className='py-4 px-14 flex justify-between items-center relative'>
         <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
           <img src='/assets/rabbit.png' alt='Toqui Co. Logo' className='h-10 w-auto ' />
-          <span className='hover:text-toquiPrimary text-2xl font-bold text-white drop-shadow-md'>toqui co.</span>
+          <span className='hover:text-gray-600 text-2xl font-bold text-white drop-shadow-md'>toqui co.</span>
         </Link>
-        <div className='md:flex justify-center items-center space-x-8 hidden'>
-          <Link to='/home' className='logo flex items-center space-x-4 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-toquiPrimary'>Home</span>
+        <div className='md:flex justify-center items-center space-x-4 hidden'>
+          <Link to='/home' className='logo flex items-center space-x-2 z-50'>
+            <span className='text-base text-white drop-shadow-md hover:text-gray-600'>Home</span>
           </Link>
           <Link to='/about' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-toquiPrimary'>About</span>
+            <span className='text-base text-white drop-shadow-md hover:text-gray-600'>About</span>
           </Link>
           <Link to='/blog' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-toquiPrimary'>Blog</span>
+            <span className='text-base text-white drop-shadow-md hover:text-gray-600 mr-8'>Blog</span>
           </Link>
           <Link to='/login' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-toquiPrimary'>Login</span>
+            <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-tiny font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+              Login
+            </button>
           </Link>
           <Link to='/register' className='logo flex items-center space-x-2 z-50'>
-            <button className='rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny text-white transition-colors hover:bg-toquiPrimary/70 focus:outline-none'>
+            <button className='cursor-pointer rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny font-medium text-white transition-colors hover:bg-toquiPrimary/80 focus:outline-none'>
               Register 🐰
             </button>
           </Link>
@@ -80,7 +82,7 @@ function Header() {
                 </NavLink>
                 <NavLink
                   to='/timeline'
-                  href="#timeline"
+                  href='#timeline'
                   onClick={handleNavLinkClick}
                   className={({ isActive }) =>
                     isActive

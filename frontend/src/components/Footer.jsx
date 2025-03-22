@@ -1,13 +1,15 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
     <footer className='pt-10 border-t border-gray-200 px-12'>
       <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
         <div className='col-span-1 md:col-span-2'>
           <div className='flex items-center gap-2 mb-4'>
-            <div className='h-8 w-8 bg-pink-400 rounded-full flex items-center justify-center'>
-              <span className='text-white font-bold text-lg'>@</span>
+            <div className='h-12 w-12 bg-gradient-to-l from-toquiPrimary to-toquiMute rounded-full flex items-center justify-center'>
+              <span className='text-white font-bold text-lg'>@T</span>
             </div>
-            <h3 className='text-lg font-bold bg-gradient-to-r from-toquiPrimary to-toquiDark bg-clip-text text-transparent'>
+            <h3 className='text-lg font-bold bg-gradient-to-r from-toquiPrimary to-toquiMute bg-clip-text text-transparent'>
               toqui co.
             </h3>
           </div>
@@ -20,52 +22,52 @@ const Footer = () => {
         <div>
           <h4 className='font-semibold text-gray-800 mb-4'>Quick Links</h4>
           <ul className='space-y-2'>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            <Link to='/home' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Home
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/blog' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Blog
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/register' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Community
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/about' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 About
               </a>
-            </li>
+            </Link>
           </ul>
         </div>
 
         <div>
           <h4 className='font-semibold text-gray-800 mb-4'>Community</h4>
           <ul className='space-y-2'>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            <Link to='/' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Forum
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Vet Directory
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Care Guides
               </a>
-            </li>
-            <li>
-              <a href='#' className='text-gray-600 hover:text-pink-500'>
+            </Link>
+            <Link to='/' className="flex flex-col">
+              <a href='#' target="_blank" className='text-gray-600 hover:text-toquiPrimary'>
                 Contact
               </a>
-            </li>
+            </Link>
           </ul>
         </div>
       </div>

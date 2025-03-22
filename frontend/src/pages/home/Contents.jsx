@@ -3,25 +3,25 @@ import React, { useState, useRef } from "react";
 import { Personalities } from "@/components/with-motion/Personalities";
 import AccordionItem from "@/components/ui/AccordionItem";
 import BlogCard from "@/components/ui/BlogCard";
-import CircularGallery from "@/components/with-motion/CircularGallery";
+import { AppleGallery } from "@/components/with-motion/AppleGallery";
 
 function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
   return (
-    <div className='container mx-auto font-satoshi mt-32'>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-6 place-items-center'>
+    <div className='container mx-auto font-satoshi mt-32 px-0'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center p-6'>
         {/* Column 1 */}
         <div className='col-span-1'>
           <img
             src='/assets/images/desk-toqs.png'
-            className='h-auto w-auto flex-grow object-cover rounded-full bg-gradient-to-b from-toquiPrimary to-yellow-100'
+            className='md:ml-16 h-auto w-auto flex-grow object-cover rounded-full bg-gradient-to-b from-toquiPrimary to-yellow-100'
             alt='Toquipush'
           />
         </div>
 
         {/* Column 2 */}
-        <div className='rounded-lg col-span-2 justify-start mt-8 md:mx-24 mx-auto'>
+        <div className='rounded-lg col-span-2 justify-start mt-8 md:mx-24 mx-auto ml-0'>
           <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
             About <span className='text-toquiPrimary font-black'>Her</span>
           </h2>
@@ -62,15 +62,13 @@ function Contents() {
           </div>
         </div>
       </div>
-
       {/* Personality Traits */}
-      <div className=' rounded-lg col-span-2 flex flex-col justify-center items-center mt-32'>
+      <div className='md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center mt-32'>
         <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
           <span className='text-toquiPrimary font-black'>Personality</span> Traits
         </h2>
         <Personalities />
       </div>
-
       {/* Favorite Foods - FAQ */}
       <section className='relative z-20 overflow-hidden dark:bg-dark lg:pb-[90px] lg:pt-[120px]'>
         <div className='container mx-auto'>
@@ -136,17 +134,35 @@ function Contents() {
       </section>
 
       {/* Gallery */}
-      <section className='py-4 pt-14'>
-        <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] text-center text-toquiPrimary font-black'>
-          Gallery
-        </h2>
-        <div style={{ height: "600px", position: "relative" }}>
-          <CircularGallery bend={3} textColor='#000' borderRadius={0.05} />
-        </div>
+      <section className='pt-14'>
+        <AppleGallery />
       </section>
 
       {/* Video */}
-      
+      <section className='mx-auto flex flex-col items-center justify-center pb-14'>
+        <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+          <span className='text-toquiPrimary font-black'>Fyrst sceawung</span>
+        </h2>
+        <div className='w-full h-11 rounded-t-lg bg-gray-900 flex justify-start items-center space-x-1.5 px-3'>
+          <span className='w-3 h-3 rounded-full bg-red-400'></span>
+          <span className='w-3 h-3 rounded-full bg-yellow-400'></span>
+          <span className='w-3 h-3 rounded-full bg-green-400'></span>
+        </div>
+        <div className='bg-gray-700 border-t-0 w-full h-auto flex justify-center'>
+          <div className='flex flex-col md:p-16 rounded-3xl'>
+            <video
+              width='900'
+              height='220'
+              className='aspect-square md:aspect-video object-cover rounded bg-black'
+              controls
+              autoPlay
+              muted>
+              <source src='/assets/video/bebi-toqs.MP4' type='video/mp4' />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
