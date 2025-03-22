@@ -149,7 +149,7 @@ function Contents() {
           <span className='w-3 h-3 rounded-full bg-green-400'></span>
         </div>
         <div className='bg-gray-700 border-t-0 w-full h-auto flex justify-center'>
-          <div className='flex flex-col md:p-16 rounded-3xl'>
+          <div className='flex flex-col md:p-16 md:rounded-3xl'>
             <video
               width='900'
               height='220'
