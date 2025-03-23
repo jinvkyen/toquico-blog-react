@@ -2,7 +2,7 @@ import React from "react";
 import { BellIcon, HeartIcon, MenuIcon, SearchIcon, UserIcon } from "lucide-react";
 import { Heart } from "@phosphor-icons/react";
 import { Link } from "react-router-dom";
-import { Threecard } from "@/components/with-motion/threecard";
+import { Threecard } from "@/components/with-motion/Threecard";
 
 const LandingPage = () => {
   return (
