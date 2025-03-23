@@ -178,7 +178,7 @@ export const Card = ({ card, index, layout = false }) => {
               </button>
               <motion.p
                 layoutId={layout ? `category-${card.title}` : undefined}
-                className='text-base font-medium text-gray-500/60 dark:text-gray-400'>
+                className='text-base font-medium text-gray-100/60 dark:text-gray-400'>
                 {card.category}
               </motion.p>
               <motion.p
@@ -186,7 +186,7 @@ export const Card = ({ card, index, layout = false }) => {
                 className='text-2xl md:text-5xl font-semibold text-white mt-4 dark:text-white'>
                 {card.title}
               </motion.p>
-              <div className='py-10'>{card.content}</div>
+              <div className=''>{card.content}</div>
             </motion.div>
           </div>
         )}
@@ -194,7 +194,7 @@ export const Card = ({ card, index, layout = false }) => {
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className='rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[40rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10'>
+        className='rounded-3xl bg-gray-100 dark:bg-neutral-900 h-80 w-56 md:h-[38rem] md:w-96 overflow-hidden flex flex-col items-start justify-start relative z-10'>
         <div className='absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none' />
         <div className='relative z-40 p-8'>
           <motion.p
@@ -226,7 +226,7 @@ export const BlurImage = ({ height, width, src, className, alt, ...rest }) => {
       loading='lazy'
       decoding='async'
       blurDataURL={typeof src === "string" ? src : undefined}
-      alt={alt ? alt : "Background of a beautiful view"}
+      alt={alt ? alt : "Pictures of Toquipush"}
       {...rest}
     />
   );

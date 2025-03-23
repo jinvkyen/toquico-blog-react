@@ -21,29 +21,46 @@ function Header() {
   }, [isOpen]);
 
   return (
-    <header className='fixed top-0 left-0 right-0 z-50'>
-      <div className='py-4 px-14 flex justify-between items-center relative'>
+    <header className='fixed top-0 left-0 right-0 z-50 font-satoshi'>
+      <div className='py-4 mx-12 md:mx-4 xl:px-40 flex justify-between items-center relative'>
         <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
           <img src='/assets/rabbit.png' alt='Toqui Co. Logo' className='h-10 w-auto ' />
-          <span className='hover:text-gray-600 text-2xl font-bold text-white drop-shadow-md'>toqui co.</span>
+          <span className='hover:text-pink-600/70 text-2xl font-black text-pink-600 drop-shadow-lg'>toqui co.</span>
         </Link>
         <div className='md:flex justify-center items-center space-x-4 hidden'>
           <Link to='/home' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-gray-600'>Home</span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
+              Home
+            </span>
           </Link>
-          <Link to='/about' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-gray-600'>About</span>
+          {/* <Link to='/about' className='logo flex items-center space-x-2 z-50'>
+            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>About</span>
           </Link>
           <Link to='/blog' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base text-white drop-shadow-md hover:text-gray-600 mr-8'>Blog</span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70 mr-8'>Blog</span>
+          </Link> */}
+          <Link to='/timeline' className='logo flex items-center space-x-2 z-50'>
+            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
+              Timeline
+            </span>
+          </Link>
+          <Link to='/fun-facts' className='logo flex items-center space-x-2 z-50'>
+            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
+              Fun Facts
+            </span>
+          </Link>
+          <Link to='/highlights' className='logo flex items-center space-x-2 z-50'>
+            <span className='text-base sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70 mr-8'>
+              Highlights
+            </span>
           </Link>
           <Link to='/login' className='logo flex items-center space-x-2 z-50'>
-            <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-tiny font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+            <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 sm:text-tiny md:text-tiny lg:text-tiny text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Login
             </button>
           </Link>
           <Link to='/register' className='logo flex items-center space-x-2 z-50'>
-            <button className='cursor-pointer rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny font-medium text-white transition-colors hover:bg-toquiPrimary/80 focus:outline-none'>
+            <button className='cursor-pointer rounded-md bg-gray-800 px-6 py-2.5 sm:text-tiny md:text-tiny lg:text-tiny text-white transition-colors hover:bg-gray-800/80 focus:outline-none'>
               Register 🐰
             </button>
           </Link>
@@ -55,7 +72,7 @@ function Header() {
         {/* Hamburger button for mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className='md:hidden z-50  outline-none hover:text-toquiPrimary text-white drop-shadow-md border-none hover:outline-none transition-colors'
+          className='md:hidden z-50  outline-none hover:text-toquiPrimary text-white drop-shadow-lg border-none hover:outline-none transition-colors'
           aria-label='Toggle navigation'>
           {isOpen ? <X size={32} /> : <Hamburger size={32} />}
         </button>
@@ -76,7 +93,7 @@ function Header() {
                   className={({ isActive }) =>
                     isActive
                       ? "font-satoshi text-xl text-white font-bold"
-                      : "font-satoshi text-lg font-normal text-white drop-shadow-md hover:text-toquiPrimary transition-colors"
+                      : "font-satoshi text-lg font-normal text-white drop-shadow-lg hover:text-toquiPrimary transition-colors"
                   }>
                   Home
                 </NavLink>
@@ -87,7 +104,7 @@ function Header() {
                   className={({ isActive }) =>
                     isActive
                       ? "font-satoshi text-xl text-white font-bold"
-                      : "font-satoshi text-lg font-normal text-white drop-shadow-md hover:text-toquiPrimary transition-colors"
+                      : "font-satoshi text-lg font-normal text-white drop-shadow-lg hover:text-toquiPrimary transition-colors"
                   }>
                   Timeline
                 </NavLink>
@@ -97,7 +114,7 @@ function Header() {
                   className={({ isActive }) =>
                     isActive
                       ? "font-satoshi text-xl text-white font-bold"
-                      : "font-satoshi text-lg font-normal text-white drop-shadow-md hover:text-toquiPrimary transition-colors"
+                      : "font-satoshi text-lg font-normal text-white drop-shadow-lg hover:text-toquiPrimary transition-colors"
                   }>
                   Fun Facts
                 </NavLink>

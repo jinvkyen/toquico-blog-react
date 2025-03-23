@@ -16,11 +16,11 @@ const LandingPage = () => {
               <div className='w-auto xl:-ml-14 mt-12 md:mt-0'>
                 <h1 className='text-3xl md:4xl lg:text-5xl font-bold leading-tight mb-4'>
                   A cozy hub for <span className='text-white border-white border-b-8'>fluff butt </span> care and
-                  cuteness 🐇
+                  cuteness. 🐇
                 </h1>
                 <p className='text-lg mb-10'>
-                  Welcome to your go-to space for all things bunny! Whether you're a new rabbit parent or a seasoned
-                  bunny lover, this cozy hub is packed with tips, care guides, and heart-melting fluff butt moments.
+                  Welcome to your go-to space for all things pet! Whether you're a new rabbit parent or a seasoned
+                  bunny lover, this cozy hub is a safe space with care guides, and heart-melting fluff butt moments.
                 </p>
               </div>
             </header>

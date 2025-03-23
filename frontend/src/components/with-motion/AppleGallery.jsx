@@ -7,7 +7,7 @@ export function AppleGallery() {
 
   return (
     <div className='w-full h-full py-20'>
-      <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+      <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium md:pl-10 pl-0'>
         <span className='text-toquiPrimary font-black'>Gallery</span>
       </h2>
       <Carousel items={cards} />
@@ -17,15 +17,14 @@ export function AppleGallery() {
 
 const Content = ({ title, src }) => {
   return (
-    <div className='dark:bg-neutral-800 p-8 md:p-14 mb-4 overflow-clip'>
-      <p className='text-white dark:text-neutral-400 text-base md:text-2xl font-satoshi max-w-3xl mx-auto'>
-      </p>
+    <div className='dark:bg-neutral-800 p-8 md:p-24 md:pt-2 mb-4 overflow-clip'>
+      <p className='text-white dark:text-neutral-400 text-base md:text-2xl font-satoshi max-w-3xl mx-auto'></p>
       <img
         src={src}
         alt={title}
         height='200'
         width='200'
-        className='md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain rounded-xl'
+        className='md:w-1/2 md:h-1/2 h-full w-full mx-auto object-cover rounded-xl'
       />
     </div>
   );

@@ -1,8 +1,9 @@
+import NotFoundPage from "../NotFoundPage";
 const LoginPage = () => {
     return (
-        <div>
-            LoginPage
-        </div>
+       <div>
+             <NotFoundPage />
+           </div>
     )
 }
 

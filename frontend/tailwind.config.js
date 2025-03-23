@@ -65,6 +65,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        dropShadow: {
+          glow: ["0 0px 20px rgb(255, 208, 199)", "0 0px 65px rgb(255, 254, 206)"],
+        },
         chart: {
           1: "hsl(var(--chart-1))",
           2: "hsl(var(--chart-2))",

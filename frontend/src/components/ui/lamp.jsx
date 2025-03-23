@@ -3,6 +3,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { ArrowCircleDown } from "@phosphor-icons/react";
 
 export default function Lamp() {
   return (
@@ -15,7 +16,7 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='mt-8 bg-gradient-to-br from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-3xl font-black tracking-tight text-transparent md:text-7xl'>
+        className='-mt-16 bg-gradient-to-br from-pink-50 to-pink-500 py-4 bg-clip-text text-center text-4xl sm:text-5xl font-black tracking-tight text-transparent lg:text-7xl'>
         Bebi's Timeline <br />
       </motion.h1>
       <motion.p
@@ -26,17 +27,18 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='mt-8 bg-gradient-to-br from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent'>
-        Follow the mini adventures of our beloved pet.
+        className='flex flex-col items-center justify-center bg-gradient-to-br leading-tight -mt-8 md:-mt-14 from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent'>
+        Follow the mini adventures of our beloved pet. <br />
+        <ArrowCircleDown
+          size={32}
+          className='relative top-20 -mt-12 text-pink-400/90 animate-bounce transition ease-in-out duration-900'
+        />
       </motion.p>
     </LampContainer>
   );
 }
 
-export const LampContainer = ({
-  children,
-  className
-}) => {
+export const LampContainer = ({ children, className }) => {
   return (
     <div
       className={cn(
@@ -46,7 +48,7 @@ export const LampContainer = ({
       <div className='relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 '>
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          whileInView={{ opacity: 1, width: "20rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -61,7 +63,7 @@ export const LampContainer = ({
         </motion.div>
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
-          whileInView={{ opacity: 1, width: "30rem" }}
+          whileInView={{ opacity: 1, width: "20rem" }}
           transition={{
             delay: 0.3,
             duration: 0.8,
@@ -94,7 +96,7 @@ export const LampContainer = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className='absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-pink-400 '></motion.div>
+          className='absolute inset-auto z-50 h-0.5 !w-[20rem] -translate-y-[7rem] bg-pink-300 '></motion.div>
 
         <div className='absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-pink-950 '></div>
       </div>
