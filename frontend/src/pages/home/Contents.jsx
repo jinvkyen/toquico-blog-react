@@ -144,21 +144,20 @@ function Contents() {
           <span className='text-toquiPrimary font-black'>Fyrst sceawung</span>
         </h2>
 
-        <p className='text-sm md:text-base text-gray-700 dark:text-gray-300 max-w-2xl font-normal leading-relaxed text-center mb-8'>
+        <p className='text-base text-gray-700 dark:text-gray-300 max-w-2xl font-normal leading-relaxed text-center mb-8'>
           This is the first video we took of Toqui when she first arrived in our home, and it's a special moment that
           we'll always treasure.
         </p>
 
-        <div className='w-full max-w-4xl mx-auto rounded-lg shadow-lg overflow-hidden'>
-
-          <div className='w-full h-11 bg-gray-900 flex justify-start items-center space-x-1.5 px-3'>
+        <div className='w-full max-w-4xl mx-auto rounded-t-lg shadow-lg overflow-hidden'>
+          <div className='w-full h-11 bg-gray-400 flex justify-start items-center space-x-1.5 px-3'>
             <span className='w-3 h-3 rounded-full bg-red-400'></span>
             <span className='w-3 h-3 rounded-full bg-yellow-400'></span>
             <span className='w-3 h-3 rounded-full bg-green-400'></span>
           </div>
 
           {/* Video container */}
-          <div className='bg-gray-900/95 w-full p-3 md:p-5'>
+          <div className='bg-gray-300/90 w-full p-3 md:p-5'>
             <div className='w-full rounded overflow-hidden'>
               <video
                 className='w-full aspect-video object-cover bg-black'
@@ -173,7 +172,7 @@ function Contents() {
         </div>
 
         {/* Optional Caption */}
-        <p className='text-xs text-gray-600 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
+        <p className='text-tiny text-gray-600 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
           First days of Toqui enjoying her new home, December 2019.
         </p>
       </section>

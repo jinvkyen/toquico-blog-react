@@ -10,6 +10,7 @@ import BlogDetailPage from "./pages/blog/BlogDetailPage";
 import LoginPage from "./pages/auth/LoginPage";
 import TimelineTab from "./pages/home/tabs/TimelineTab";
 import { FunFactsTab } from "./pages/home/tabs/FunFactsTab";
+import { HighlightsTab } from "./pages/home/tabs/HighlightsTab";
 
 // Requires registration
 import RegisterPage from "./pages/auth/RegisterPage";
@@ -31,13 +32,14 @@ function App() {
       {/* <AuthProvider> */}
       <Router>
         <Header />
-        <main className='min-h-screen pt-16 bg-gradient-to-r from-yellow-100 to-pink-400/70'>
+        <main className='min-h-screen pt-16 bg-gradient-to-r from-yellow-50 to-pink-600/80 scroll-smooth'>
           <Routes>
             {/* Public Routes */}
             <Route path='/' element={<LandingPage />} />
             <Route path='/home' element={<HomePage />} />
             <Route path='/timeline' element={<TimelineTab />} />
             <Route path='/fun-facts' element={<FunFactsTab />} />
+            <Route path='/highlights' element={<HighlightsTab />} />
             <Route path='/blog' element={<BlogListPage />} />
             <Route path='/blog/:id' element={<BlogDetailPage />} />
             <Route path='/login' element={<LoginPage />} />
