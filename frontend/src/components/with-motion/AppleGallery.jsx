@@ -7,7 +7,7 @@ export function AppleGallery() {
 
   return (
     <div className='w-full h-full py-20'>
-      <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium md:pl-10 pl-0'>
+      <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium xl:pl-20 pl-6'>
         <span className='text-toquiPrimary font-black'>Gallery</span>
       </h2>
       <Carousel items={cards} />

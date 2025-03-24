@@ -83,9 +83,14 @@ export default {
             from: { transform: "translateX(0%)" },
             to: { transform: "translateX(-50%)" },
           },
+          shine: {
+            "0%": { "background-position": "100%" },
+            "100%": { "background-position": "-100%" },
+          },
         },
         animation: {
           marquee: "marquee 15s linear infinite",
+          shine: "shine 5s linear infinite",
         },
       },
       borderRadius: {

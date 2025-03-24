@@ -21,41 +21,38 @@ function Header() {
   }, [isOpen]);
 
   return (
-    <header className='fixed top-0 left-0 right-0 z-50 font-satoshi'>
+    <header className='fixed top-0 left-0 right-0 z-50 font-satoshi bg-gray-600/20 border-b border-gray-100/20'>
       <div className='py-4 mx-12 md:mx-4 xl:px-40 flex justify-between items-center relative'>
         <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
           <img src='/assets/rabbit.png' alt='Toqui Co. Logo' className='h-10 w-auto ' />
-          <span className='hover:text-pink-600/70 text-2xl font-black text-pink-600 drop-shadow-lg'>toqui co.</span>
+          <span className='hover:text-gray-50/70 text-2xl font-black text-white drop-shadow-lg'>toqui co.</span>
         </Link>
         <div className='md:flex justify-center items-center space-x-4 hidden'>
           <Link to='/home' className='logo flex items-center space-x-2 z-50'>
-            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
-              Home
-            </span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>Home</span>
           </Link>
           {/* <Link to='/about' className='logo flex items-center space-x-2 z-50'>
-            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>About</span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>About</span>
           </Link>
           <Link to='/blog' className='logo flex items-center space-x-2 z-50'>
-            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70 mr-8'>Blog</span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white mr-8'>Blog</span>
           </Link> */}
           <Link to='/timeline' className='logo flex items-center space-x-2 z-50'>
-            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
-              Timeline
-            </span>
-          </Link>
-          <Link to='/fun-facts' className='logo flex items-center space-x-2 z-50'>
-            <span className='sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70'>
-              Fun Facts
-            </span>
+            <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>Timeline</span>
           </Link>
           <Link to='/highlights' className='logo flex items-center space-x-2 z-50'>
-            <span className='text-base sm:text-tiny md:text-tiny lg:text-base text-pink-600 drop-shadow-lg hover:text-pink-600/70 mr-8'>
+            <span className='text-base sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>
               Highlights
             </span>
           </Link>
+          <Link to='/fun-facts' className='logo flex items-center space-x-2 z-50'>
+            <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white mr-8'>
+              Fun Facts
+            </span>
+          </Link>
           <Link to='/login' className='logo flex items-center space-x-2 z-50'>
-            <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 sm:text-tiny md:text-tiny lg:text-tiny text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+            {/* Link to */}
+            <button className='cursor-pointer rounded-md border border-gray-100/50 bg-white/10 px-6 py-2.5 text-tiny md:text-tiny font-medium text-gray-50/80 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Login
             </button>
           </Link>
@@ -72,7 +69,7 @@ function Header() {
         {/* Hamburger button for mobile */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className='md:hidden z-50  outline-none hover:text-toquiPrimary text-white drop-shadow-lg border-none hover:outline-none transition-colors'
+          className='md:hidden z-50  outline-none hover:text-gray-50/70 text-white drop-shadow-lg border-none hover:outline-none transition-colors'
           aria-label='Toggle navigation'>
           {isOpen ? <X size={32} /> : <Hamburger size={32} />}
         </button>

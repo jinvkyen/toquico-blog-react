@@ -7,7 +7,7 @@ function HomePage() {
     <div className='min-h-screen bg-transparent font-satoshi'>
       {/* Marquee */}
       <MarqueeA />
-      <section className='container mx-auto'>
+      <section className='container mx-auto px-0'>
         <Contents />
       </section>
     </div>
