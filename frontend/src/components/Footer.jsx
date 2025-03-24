@@ -22,7 +22,7 @@ const Footer = () => {
           <h4 className='font-semibold text-gray-800 mb-4'>Quick Links</h4>
           <ul className='space-y-2 mb-2'>
             <Link to='/home' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <a href='/home' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Home
               </a>
             </Link>

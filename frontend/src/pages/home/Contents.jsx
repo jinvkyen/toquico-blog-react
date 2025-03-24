@@ -9,7 +9,7 @@ function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
   return (
-    <div className='container mx-auto font-satoshi mt-32 px-0'>
+    <div className='container mx-auto font-satoshi mt-8 px-0 w-full'>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center p-6'>
         {/* Column 1 */}
         <div className='col-span-1'>

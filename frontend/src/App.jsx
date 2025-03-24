@@ -1,6 +1,6 @@
 // App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import LandingPage from "./pages/LandPage";
@@ -23,6 +23,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 // import AuthProvider from "./context/AuthProvider";
+import ScrollToTop from "./components/ScrollToTop"
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       {/* <AuthProvider> */}
       <Router>
+      <ScrollToTop/>
         <Header />
         <main className='min-h-screen pt-16 bg-gradient-to-r from-yellow-50 to-pink-600/80 scroll-smooth'>
           <Routes>
