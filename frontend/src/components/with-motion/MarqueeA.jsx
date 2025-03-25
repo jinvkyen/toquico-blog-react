@@ -1,5 +1,6 @@
 "use client";
 import { ThreeDMarquee } from "@/components/ui/3d-marquee";
+import { Link } from "react-router-dom";
 
 export function MarqueeA() {
   const images = [
@@ -53,19 +54,21 @@ export function MarqueeA() {
           Toqui!
         </span>
       </h2>
-      <p className='relative z-20 mx-auto max-w-2xl py-8 text-center text-neutral-200 text-base'>
+      <p className='relative z-20 px-2 md:mx-auto max-w-2xl py-8 text-center text-neutral-200 text-base'>
         A charming New Zealand rabbit with a soft, snowy-white coat and a gentle personality. Playful yet calm, she
         loves hopping around, munching on fresh veggies, and snuggling in cozy spots.
       </p>
       <div className='cursor-pointer relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4'>
-        {/* Link to */}
-        <button className='cursor-pointer rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny font-medium text-white transition-colors hover:bg-toquiPrimary/80 focus:outline-none'>
-          Join the club
-        </button>
-        {/* Link to */}
-        <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-tiny font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
-          Read more
-        </button>
+        <Link to='/login'>
+          <button className='cursor-pointer rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny font-medium text-white transition-colors hover:bg-toquiPrimary/80 focus:outline-none'>
+            Join the club
+          </button>
+        </Link>
+        <a href='#about-her'>
+          <button className='cursor-pointer rounded-md border border-white/20 bg-white/10 px-6 py-2.5 text-tiny font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+            Read more
+          </button>
+        </a>
       </div>
       {/* overlay */}
       <div className='absolute inset-0 z-10 h-full w-full bg-black/80 dark:bg-black/40' />

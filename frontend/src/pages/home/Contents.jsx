@@ -9,8 +9,8 @@ function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
   return (
-    <div className='container mx-auto font-satoshi mt-8 px-0 w-full'>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center p-6'>
+    <div id='about-her' className='container mx-auto font-satoshi mt-8 px-0 w-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center'>
         {/* Column 1 */}
         <div className='col-span-1'>
           <img
@@ -22,8 +22,8 @@ function Contents() {
 
         {/* Column 2 */}
         <div className='rounded-lg col-span-2 justify-start mt-8 md:mx-24 mx-auto ml-0'>
-          <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-            About <span className='text-toquiPrimary font-black'>Her</span>
+          <h2 className='mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+            About <span className='text-pink-800 font-black'>Her</span>
           </h2>
           <div className='text-gray-800 text-left text-wrap'>
             <p className='text-base'>
@@ -63,11 +63,13 @@ function Contents() {
         </div>
       </div>
       {/* Personality Traits */}
-      <div className='md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center mt-32'>
-        <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-          <span className='text-toquiPrimary font-black'>Personality</span> Traits
+      <div className='md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
+        <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+          <span className='text-pink-800 font-black'>Personality</span> Traits
         </h2>
-        <Personalities />
+        <div className='p-4 mb-24'>
+          <Personalities />
+        </div>
       </div>
       {/* Favorite Foods - FAQ */}
       <section className='relative z-20 overflow-hidden dark:bg-dark lg:pb-[90px] lg:pt-[120px]'>
@@ -75,9 +77,9 @@ function Contents() {
           <div className='flex flex-wrap'>
             <div className='w-full'>
               <div className='mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20'>
-                <span className='mb-2 block text-lg font-semibold text-red-500'>FAQ</span>
-                <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-                  Favorite <span className='text-toquiPrimary font-black'>Foods</span>
+                <span className='mb-2 block text-lg font-semibold text-yellow-700'>FAQ</span>
+                <h2 className='leading-tight mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+                  Favorite <span className='text-pink-800 font-black'>Foods</span>
                 </h2>
                 <p className='dark:text-dark-6 text-gray-800'>
                   Toqui loves to eat! (a lot...) Below are some interesting facts about her favorite foods:
@@ -123,7 +125,7 @@ function Contents() {
                   </div>
                 </div>
                 <div className='col-span-1'>
-                  <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 place-items-center'>
+                  <div className='grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center'>
                     <BlogCard />
                   </div>
                 </div>
@@ -139,12 +141,12 @@ function Contents() {
       </section>
 
       {/* Video Section */}
-      <section className='mx-auto flex flex-col items-center justify-center py-16 md:py-24 px-4 max-w-5xl'>
-        <h2 className='mb-3 text-2xl md:text-[40px]/[48px] font-medium text-center text-dark dark:text-white'>
-          <span className='text-toquiPrimary font-black'>Fyrst sceawung</span>
+      <section className='mx-auto flex flex-col items-center justify-center py-16 md:py-24 px-0 max-w-5xl'>
+        <h2 className='mb-3 text-3xl md:text-4xl font-medium text-center text-dark dark:text-white'>
+          <span className='text-pink-800 font-black'>Fyrst sceawung</span>
         </h2>
 
-        <p className='text-base text-gray-700 dark:text-gray-300 max-w-2xl font-normal leading-relaxed text-center mb-8'>
+        <p className='text-base text-gray-900/70 dark:text-gray-300 max-w-2xl font-normal leading-tight text-center mb-8'>
           This is the first video we took of Toqui when she first arrived in our home, and it's a special moment that
           we'll always treasure.
         </p>
