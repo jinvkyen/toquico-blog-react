@@ -11,13 +11,12 @@ const Navbar = () => {
 
   return (
     <nav className='fixed w-full navbar font-satoshi z-50 bg-white overflow-visible'>
-      <div className='flex justify-between items-center px-6 py-3 border-b border-gray-100'>
+      <div className='flex justify-between items-center px-6 py-4 border-b border-gray-100'>
         <div className='flex items-center space-x-4'>
           <Link to='/user' className='flex items-center space-x-2'>
             <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-12 h-12 p-2 rounded-full bg-pink-700' />
-            <p className='text-gray-800 text-xl font-black'>toqui co.</p>
+            <p className='text-gray-800 text-lg md:text-2xl font-black'>toqui co.</p>
           </Link>
-
 
           <div className='hidden md:block relative w-64'>
             <input
@@ -34,14 +33,12 @@ const Navbar = () => {
             <MagnifyingGlass size={20} className='absolute right-4 top-1/2 -translate-y-1/2 text-gray-800' />
           </div>
 
-
           <button
             className='md:hidden z-50 bg-gray-100 w-12 h-12 rounded-full flex items-center justify-center'
             onClick={toggleSearchBox}>
             <MagnifyingGlass size={20} />
           </button>
         </div>
-
 
         <div
           className={`
@@ -67,27 +64,26 @@ const Navbar = () => {
           </div>
         </div>
 
-
         <div className='flex items-center space-x-4'>
-          <Link to='/editor' className='hidden md:flex items-center gap-2 text-gray-500'>
+          <Link to='/user/editor' className='hidden md:flex items-center gap-2 text-gray-500'>
             Write <Pen size={20} />
           </Link>
 
-          <Link to='/login'>
+          <Link to='/user/login'>
             <button
               className='
               rounded-md
               bg-pink-800
               px-6 py-2.5
               text-white
-              transition-colors
+              transition-colors text-tiny
               hover:bg-pink-800/80
             '>
               Sign In
             </button>
           </Link>
 
-          <Link to='/register' className='hidden md:block'>
+          <Link to='/user/register' className='hidden md:block'>
             <button
               className='
               rounded-md
@@ -95,7 +91,7 @@ const Navbar = () => {
               px-6 py-2.5
               text-gray-900
               transition-colors
-              hover:bg-gray-200/80
+              hover:bg-gray-200/80 text-tiny
             '>
               Sign Up
             </button>

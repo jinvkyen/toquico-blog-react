@@ -13,8 +13,8 @@ const Footer = () => {
             <h3 className='text-lg font-bold bg-gray-800 bg-clip-text text-transparent'>toqui co.</h3>
           </div>
           <p className='text-gray-800 mb-4 text-balance'>
-            This site is a personal project dedicated to my pet rabbit, Toqui, where I share my experiences and adventures with her. I hope to
-            connect with you all by sharing her story with you.
+            This site is a personal project dedicated to my pet rabbit, Toqui, where I share my experiences and
+            adventures with her. I hope to connect with you all by sharing her story with you.
           </p>
         </div>
 
@@ -22,24 +22,24 @@ const Footer = () => {
           <h4 className='font-semibold text-gray-800 mb-4'>Quick Links</h4>
           <ul className='space-y-2 mb-2'>
             <Link to='/home' className='flex flex-col'>
-              <a href='/home' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='/home' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Home
-              </a>
+              </p>
             </Link>
             <Link to='/blog' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Blog
-              </a>
+              </p>
             </Link>
             <Link to='/register' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Community
-              </a>
+              </p>
             </Link>
             <Link to='/about' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 About
-              </a>
+              </p>
             </Link>
           </ul>
         </div>
@@ -48,24 +48,24 @@ const Footer = () => {
           <h4 className='font-semibold text-gray-800 mb-4'>Community</h4>
           <ul className='space-y-2'>
             <Link to='/' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Forum
-              </a>
+              </p>
             </Link>
             <Link to='/' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Vet Directory
-              </a>
+              </p>
             </Link>
             <Link to='/' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Care Guides
-              </a>
+              </p>
             </Link>
             <Link to='/' className='flex flex-col'>
-              <a href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
+              <p href='#' target='_blank' className='text-gray-800 hover:text-toquiPrimary'>
                 Contact
-              </a>
+              </p>
             </Link>
           </ul>
         </div>

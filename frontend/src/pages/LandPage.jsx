@@ -124,7 +124,7 @@ const LandingPage = () => {
               <h3 className='text-xl font-semibold mb-2'>Join Our Pet-Loving Community</h3>
               <p className='opacity-90 mb-4 md:mb-0'>Connect with fellow rabbit or pet owners and share experiences!</p>
             </div>
-            <Link to='login'>
+            <Link to='/user/login'>
               <button className='px-6 py-3 bg-white text-pink-500 font-medium rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transition-shadow'>
                 Join Now
               </button>
@@ -193,9 +193,7 @@ const LandingPage = () => {
               <div className='mt-4 flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>March 10, 2025</span>
                 <Link to='home'>
-                  <p className='text-pink-500 font-medium hover:text-pink-600'>
-                    Read More
-                  </p>
+                  <p className='text-pink-500 font-medium hover:text-pink-600'>Read More</p>
                 </Link>
               </div>
             </div>

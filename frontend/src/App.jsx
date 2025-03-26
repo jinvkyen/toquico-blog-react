@@ -46,11 +46,10 @@ function App() {
             <Route path='blog' element={<BlogListPage />} />
             <Route path='blog/:id' element={<BlogDetailPage />} />
           </Route>
-          {/* user introduction */}
-          <Route path='/login' element={<UserAuthForm type={"Sign In"} />} />
-          <Route path='/register' element={<UserAuthForm type={"Join the club"} />} />
 
           <Route path='/user' element={<ProtectedLayout />}>
+            <Route path='login' element={<UserAuthForm type={"Sign In"} />} />
+            <Route path='register' element={<UserAuthForm type={"Join the Club"} />} />
             <Route path='profile' element={<ProfilePage />} />
             <Route path='social' element={<SocialFeedPage />} />
           </Route>

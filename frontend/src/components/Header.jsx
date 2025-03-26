@@ -22,7 +22,7 @@ function Header() {
 
   return (
     <header className='fixed top-0 left-0 right-0 z-50 font-satoshi bg-gray-600/20 border-b border-gray-100/20'>
-      <div className='py-4 mx-8 md:mx-4 xl:px-40 flex justify-between items-center relative'>
+      <div className='py-4 px-4 flex justify-between items-center relative'>
         <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
           <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-auto h-12 p-2 rounded-full bg-pink-700' />{" "}
           <p className='text-white hover:text-gray-50/70 drop-shadow-lg text-2xl font-black'>toqui co.</p>
@@ -50,14 +50,14 @@ function Header() {
               Fun Facts
             </span>
           </Link>
-          <Link to='login' className='logo flex items-center space-x-2 z-50'>
+          <Link to='/user/login' className='logo flex items-center space-x-2 z-50'>
             {/* Link to */}
-            <button className='cursor-pointer rounded-md border border-gray-100/50 bg-white/10 px-6 py-2.5 text-tiny md:text-tiny font-medium text-gray-50/80 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+            <button className='cursor-pointer rounded-md border border-gray-100/50 bg-white/10 px-6 py-2.5 text-tiny font-medium text-gray-50/80 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Sign In
             </button>
           </Link>
-          <Link to='register' className='logo flex items-center space-x-2 z-50'>
-            <button className='cursor-pointer rounded-md bg-gray-800 px-6 py-2.5 sm:text-tiny md:text-tiny lg:text-tiny text-white transition-colors hover:bg-gray-800/80 focus:outline-none'>
+          <Link to='/user/register' className='logo flex items-center space-x-2 z-50'>
+            <button className='cursor-pointer rounded-md bg-gray-900 px-3.5 py-3 text-tiny font-medium text-gray-50/80 transition-colors hover:bg-gray-900/70 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Sign Up 🐰
             </button>
           </Link>
