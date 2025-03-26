@@ -59,7 +59,7 @@ export function MarqueeA() {
         loves hopping around, munching on fresh veggies, and snuggling in cozy spots.
       </p>
       <div className='cursor-pointer relative z-20 flex flex-wrap items-center justify-center gap-4 pt-4'>
-        <Link to='login'>
+        <Link to='/login'>
           <button className='cursor-pointer rounded-md bg-pink-700 px-6 py-2.5 text-tiny font-medium text-white transition-colors hover:bg-pink-700/80 focus:outline-none'>
             Join the club
           </button>
