@@ -22,13 +22,13 @@ function Header() {
 
   return (
     <header className='fixed top-0 left-0 right-0 z-50 font-satoshi bg-gray-600/20 border-b border-gray-100/20'>
-      <div className='py-4 mx-12 md:mx-4 xl:px-40 flex justify-between items-center relative'>
+      <div className='py-4 mx-8 md:mx-4 xl:px-40 flex justify-between items-center relative'>
         <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
-          <img src='/assets/rabbit.png' alt='Toqui Co. Logo' className='h-10 w-auto ' />
-          <span className='hover:text-gray-50/70 text-2xl font-black text-white drop-shadow-lg'>toqui co.</span>
+          <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-auto h-12 p-2 rounded-full bg-pink-700' />{" "}
+          <p className='text-white hover:text-gray-50/70 drop-shadow-lg text-2xl font-black'>toqui co.</p>
         </Link>
         <div className='md:flex justify-center items-center space-x-4 hidden'>
-          <Link to='/home' className='logo flex items-center space-x-2 z-50'>
+          <Link to='home' className='logo flex items-center space-x-2 z-50'>
             <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>Home</span>
           </Link>
           {/* <Link to='/about' className='logo flex items-center space-x-2 z-50'>
@@ -37,28 +37,28 @@ function Header() {
           <Link to='/blog' className='logo flex items-center space-x-2 z-50'>
             <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white mr-8'>Blog</span>
           </Link> */}
-          <Link to='/timeline' className='logo flex items-center space-x-2 z-50'>
+          <Link to='timeline' className='logo flex items-center space-x-2 z-50'>
             <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>Timeline</span>
           </Link>
-          <Link to='/highlights' className='logo flex items-center space-x-2 z-50'>
+          <Link to='highlights' className='logo flex items-center space-x-2 z-50'>
             <span className='text-base sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white'>
               Highlights
             </span>
           </Link>
-          <Link to='/fun-facts' className='logo flex items-center space-x-2 z-50'>
+          <Link to='fun-facts' className='logo flex items-center space-x-2 z-50'>
             <span className='sm:text-tiny md:text-tiny lg:text-base hover:text-gray-50/70 text-white mr-8'>
               Fun Facts
             </span>
           </Link>
-          <Link to='/login' className='logo flex items-center space-x-2 z-50'>
+          <Link to='login' className='logo flex items-center space-x-2 z-50'>
             {/* Link to */}
             <button className='cursor-pointer rounded-md border border-gray-100/50 bg-white/10 px-6 py-2.5 text-tiny md:text-tiny font-medium text-gray-50/80 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
-              Login
+              Sign In
             </button>
           </Link>
-          <Link to='/register' className='logo flex items-center space-x-2 z-50'>
+          <Link to='register' className='logo flex items-center space-x-2 z-50'>
             <button className='cursor-pointer rounded-md bg-gray-800 px-6 py-2.5 sm:text-tiny md:text-tiny lg:text-tiny text-white transition-colors hover:bg-gray-800/80 focus:outline-none'>
-              Register 🐰
+              Sign Up 🐰
             </button>
           </Link>
         </div>
@@ -84,7 +84,7 @@ function Header() {
             <nav className='fixed inset-0 flex items-center justify-center bg-toquiPrimary/15 md:hidden'>
               <div className='flex flex-col items-center text-center justify-center gap-8'>
                 <NavLink
-                  to='/home'
+                  to='home'
                   end
                   onClick={handleNavLinkClick}
                   className={({ isActive }) =>
@@ -95,7 +95,7 @@ function Header() {
                   Home
                 </NavLink>
                 <NavLink
-                  to='/timeline'
+                  to='timeline'
                   href='#timeline'
                   onClick={handleNavLinkClick}
                   className={({ isActive }) =>
@@ -106,17 +106,7 @@ function Header() {
                   Timeline
                 </NavLink>
                 <NavLink
-                  to='/fun-facts'
-                  onClick={handleNavLinkClick}
-                  className={({ isActive }) =>
-                    isActive
-                      ? "font-satoshi text-xl text-white font-bold"
-                      : "font-satoshi text-lg font-normal text-white drop-shadow-lg hover:text-toquiPrimary transition-colors"
-                  }>
-                  Fun Facts
-                </NavLink>
-                <NavLink
-                  to='/highlights'
+                  to='highlights'
                   onClick={handleNavLinkClick}
                   className={({ isActive }) =>
                     isActive
@@ -124,6 +114,16 @@ function Header() {
                       : "font-satoshi text-lg font-normal text-white drop-shadow-md hover:text-toquiPrimary transition-colors"
                   }>
                   Highlights
+                </NavLink>
+                <NavLink
+                  to='fun-facts'
+                  onClick={handleNavLinkClick}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-satoshi text-xl text-white font-bold"
+                      : "font-satoshi text-lg font-normal text-white drop-shadow-lg hover:text-toquiPrimary transition-colors"
+                  }>
+                  Fun Facts
                 </NavLink>
               </div>
             </nav>
@@ -135,4 +135,3 @@ function Header() {
 }
 
 export default Header;
-console.log("header");

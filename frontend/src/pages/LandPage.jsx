@@ -8,17 +8,16 @@ const LandingPage = () => {
   return (
     <div className='min-h-screen bg-transparent p-4 md:p-8 font-satoshi'>
       {/* Hero Section */}
-      <div className='flex flex-wrap mb-10 justify-around'>
+      <div className='flex flex-wrap mb-10 justify-around md:-mt-10'>
         <div className='w-full xl:w-6/12'>
           <div className='container mx-auto h-full md:p-10 p-0'>
-            <nav className='flex px-4 justify-between items-center'></nav>
             <header className='container px-4 lg:flex items-center h-full text-gray-900'>
               <div className='w-auto xl:-ml-14 mt-12 md:mt-0'>
-                <h1 className='text-3xl md:4xl lg:text-5xl font-bold leading-tight mb-4'>
+                <h1 className='text-2xl md:4xl lg:text-5xl font-bold leading-tight mb-4'>
                   A cozy hub for <span className='text-white border-white border-b-8'>fluff butt </span> care and
                   cuteness. 🐇
                 </h1>
-                <p className='text-lg mb-10'>
+                <p className='text-base md:text-lg -mb-10'>
                   Welcome to your go-to space for all things pet! Whether you're a new rabbit parent or a seasoned bunny
                   lover, this cozy hub is a safe space with care guides, and heart-melting fluff butt moments.
                 </p>
@@ -125,7 +124,7 @@ const LandingPage = () => {
               <h3 className='text-xl font-semibold mb-2'>Join Our Pet-Loving Community</h3>
               <p className='opacity-90 mb-4 md:mb-0'>Connect with fellow rabbit or pet owners and share experiences!</p>
             </div>
-            <Link to='/login'>
+            <Link to='login'>
               <button className='px-6 py-3 bg-white text-pink-500 font-medium rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transition-shadow'>
                 Join Now
               </button>
@@ -166,7 +165,7 @@ const LandingPage = () => {
                 <div className='mt-4 flex items-center justify-between'>
                   <span className='text-sm text-gray-500'>March 15, 2025</span>
                   {/* This works! */}
-                  <Link to={"/home"} className='text-pink-500 font-medium hover:text-pink-600'>
+                  <Link to={"home"} className='text-pink-500 font-medium hover:text-pink-600'>
                     Read More
                   </Link>
                 </div>
@@ -193,10 +192,11 @@ const LandingPage = () => {
               </p>
               <div className='mt-4 flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>March 10, 2025</span>
-                {/* Link to */}
-                <a href='#' className='text-pink-500 font-medium hover:text-pink-600'>
-                  Read More
-                </a>
+                <Link to='home'>
+                  <p className='text-pink-500 font-medium hover:text-pink-600'>
+                    Read More
+                  </p>
+                </Link>
               </div>
             </div>
           </div>
@@ -218,7 +218,7 @@ const LandingPage = () => {
               </p>
               <div className='mt-4 flex items-center justify-between'>
                 <span className='text-sm text-gray-500'>March 5, 2025</span>
-                <Link to={"/home"} className='text-pink-500 font-medium hover:text-pink-600'>
+                <Link to='home' className='text-pink-500 font-medium hover:text-pink-600'>
                   Read More
                 </Link>
               </div>
@@ -231,7 +231,7 @@ const LandingPage = () => {
               <div className='h-14 w-14 rounded-full overflow-hidden mr-4'>
                 <img
                   src='https://i.pinimg.com/736x/53/4b/f5/534bf5ef30c7651d980af91510ae9627.jpg'
-                  alt='User'
+                  alt='Suji'
                   className='h-full w-full object-cover'
                 />
               </div>

@@ -5,7 +5,7 @@ const ProtectedLayout = () => {
   return (
     <>
       <Navbar />
-      <main className='flex-grow min-h-screen pt-16 bg-gray-100'>
+      <main className='min-h-screen pt-20 bg-gray-50 scroll-smooth'>
         <Outlet />
       </main>
     </>

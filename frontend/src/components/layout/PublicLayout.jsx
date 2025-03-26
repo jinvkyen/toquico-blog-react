@@ -6,7 +6,7 @@ const PublicLayout = () => {
     return (
       <>
         <Header />
-        <main className='min-h-screen pt-16 bg-gradient-to-r from-yellow-100 to-pink-600/80 scroll-smooth'>
+        <main className='min-h-screen pt-16 bg-gradient-to-r from-yellow-50 to-pink-700/80 scroll-smooth'>
           <Outlet />
         </main>
         <Footer />

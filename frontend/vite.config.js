@@ -20,6 +20,6 @@ export default defineConfig({
     },
   },
   server: {
-    historyApiFallback: true, // Fixes BrowserRouter refresh issue
+    historyApiFallback: true,
   },
 });

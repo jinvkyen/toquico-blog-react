@@ -70,7 +70,7 @@ export const FunFactsTab = () => {
           <div className='xl:mx-32 flex flex-col md:flex-row items-center relative top-10 md:top-32'>
             <div className='md:w-3/5 mb-6 md:mb-0 md:pr-8'>
               <h1 className='text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4'>
-                Fascinating Facts About <span className='text-toquiPrimary dark:text-pink-400'>Toqui</span>
+                Fascinating Facts About <span className='text-pink-700 dark:text-pink-400'>Toqui</span>
               </h1>
               <p className='text-lg xl:text-xl text-gray-700 dark:text-gray-300 mb-6'>
                 Discover the quirky, adorable, and sometimes surprising world of our beloved bunny companion!
@@ -117,9 +117,9 @@ export const FunFactsTab = () => {
           <div className='border-b pb-6 mb-10'>
             <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white'>Fun Facts</h2>
             <div className='flex items-center mt-4 text-base text-gray-600 dark:text-gray-300'>
-              <span>It's a joy to share these fun facts about Toqui!</span>
+              <span className='text-pretty'>It's a joy to share these fun facts about Toqui!</span>
               <span className='mx-2'>•</span>
-              <span>10 min read</span>
+              <span className='text-tiny text-nowrap'>20 min read</span>
             </div>
           </div>
         </AnimatedContent>
@@ -223,7 +223,7 @@ export const FunFactsTab = () => {
                 <img
                   src='/assets/rabbit.png'
                   alt='Toqui Co Logo'
-                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-600 bg-pink-600 p-2'
+                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-700 bg-pink-700 p-2'
                 />
                 <h3 className='font-bold text-lg mb-2 text-gray-900 dark:text-white'>About Toqui Co.</h3>
                 <p className='text-gray-700 dark:text-gray-300 text-tiny mb-4'>
