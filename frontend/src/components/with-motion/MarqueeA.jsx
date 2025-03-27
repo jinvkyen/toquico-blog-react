@@ -48,9 +48,9 @@ export function MarqueeA() {
   ];
   return (
     <div className='relative -top-16 mx-auto flex h-screen w-full max-w-8xl flex-col items-center justify-center overflow-hidden'>
-      <h2 className='relative z-20 mx-auto max-w-4xl text-center text-3xl font-bold text-balance leading-none text-white md:text-4xl lg:text-6xl'>
+      <h2 className='relative z-20 mx-auto max-w-7xl text-center text-3xl font-bold text-balance leading-none text-white md:text-4xl lg:text-6xl'>
         Welcome, <br /> and meet{" "}
-        <span className='relative z-20 inline-block rounded-xl bg-pink-700/35 px-4 py-1 text-white underline decoration-pink-700 decoration-[6px] underline-offset-[16px] backdrop-blur-sm'>
+        <span className='relative z-20 inline-block rounded-xl bg-pink-700/35 px-4 py-2 text-white underline decoration-pink-700 decoration-[6px] underline-offset-[16px] backdrop-blur-sm'>
           Toqui!
         </span>
       </h2>
