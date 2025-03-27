@@ -16,7 +16,7 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='-mt-16 bg-gradient-to-br from-pink-50 to-pink-500 py-4 bg-clip-text text-center text-4xl sm:text-5xl font-black tracking-tight text-transparent lg:text-7xl'>
+        className='-mt-24 bg-gradient-to-br from-pink-50 to-pink-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-black tracking-tight text-transparent lg:text-7xl'>
         Bebi's Timeline <br />
       </motion.h1>
       <motion.p
@@ -27,11 +27,11 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='flex flex-col items-center justify-center bg-gradient-to-br leading-tight -mt-8 md:-mt-14 from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-xl font-medium tracking-tight text-transparent'>
+        className='flex flex-col items-center justify-center bg-gradient-to-br leading-tight -mt-8 md:-mt-12 from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-base md:text-xl font-medium tracking-tight text-transparent'>
         Follow the mini adventures of our beloved pet. <br />
         <ArrowCircleDown
           size={32}
-          className='relative top-20 -mt-12 text-pink-400/90 animate-bounce transition ease-in-out duration-900'
+          className='relative top-12 -mt-0 text-pink-400/90 animate-bounce transition ease-in-out duration-900'
         />
       </motion.p>
     </LampContainer>

@@ -92,7 +92,7 @@ const TimelineContent = () => {
       content: (
         <div>
           <p className='text-gray-200 dark:text-neutral-200 text-base md:text-xl font-normal mb-8'>
-            Deployed 5 new components on Aceternity today
+            Bebi cont...
           </p>
           <div className='mb-8'>
             <div className='text-gray-300 dark:text-neutral-200 text-base md:text-lg font-normal mb-8 text-balance'>

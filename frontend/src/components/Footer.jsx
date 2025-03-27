@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className='pt-10 border-gray-200 px-12 font-satoshi'>
+    <footer className='flex flex-col justify-center items-center border-gray-200 font-satoshi'>
       <hr className='mb-4 border-gray-50/30' />
-      <div className='grid grid-cols-1 md:grid-cols-4 gap-8'>
+      <div className='grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:px-12 md:place-items-center'>
         <div className='col-span-1 md:col-span-2'>
           <div className='flex items-center gap-2 mb-4'>
             <div className='h-12 w-12 bg-black rounded-full flex items-center justify-center'>
@@ -73,7 +73,7 @@ const Footer = () => {
 
       <hr className='mt-2 border-gray-50/30' />
       <div className='pt-8 pb-2 border-gray-200 text-center text-gray-700/60 text-sm'>
-        <p>&copy; 2025 Toqui's Journey. All rights reserved.</p>
+        <p>&copy; 2025 Toqui Co. All rights reserved.</p>
       </div>
     </footer>
   );

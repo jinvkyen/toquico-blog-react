@@ -6,7 +6,7 @@ export const HighlightsTab = () => {
   return (
     <div className='min-h-screen flex items-center justify-center px-4 py-4 font-satoshi'>
       <div className='flex flex-col'>
-        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-8 mx-auto'>
+        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-4 md:p-8 mx-auto'>
           {/* Main Hero Content */}
           <AnimatedContent
             distance={100}
@@ -25,8 +25,8 @@ export const HighlightsTab = () => {
                 </h1>
               </div>
 
-              {/* buttons */}
-              <div className='flex flex-col sm:flex-row gap-4'>
+              <div className='grid grid-cols-2 gap-4'>
+                {/* buttons */}
                 <Link to='/user/login'>
                   <button className='cursor-pointer rounded-md bg-pink-700 px-6 py-2.5 text-tiny md:text-base font-medium text-white transition-colors hover:bg-pink-700/80 focus:outline-none'>
                     Join toqui co.
@@ -40,7 +40,7 @@ export const HighlightsTab = () => {
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-              <div className='flex items-center'>
+              <div className='flex items-center justify-center -mt-4 md:-mt-0 '>
                 <div className='flex -space-x-3'>
                   <div className='w-10 h-10 rounded-full bg-red-400 border-2 border-white'>
                     <img
@@ -240,7 +240,7 @@ export const HighlightsTab = () => {
             </div>
           </AnimatedContent>
         </div>
-        <div className='flex flex-col justify-center items-center mt-20 max-w-7xl w-full p-8 mx-auto'>
+        <div className='flex flex-col justify-center items-center mt-20 max-w-7xl w-full mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-12 gap-8'>
             <div className='md:col-span-8'>
               {/* Content Section */}
