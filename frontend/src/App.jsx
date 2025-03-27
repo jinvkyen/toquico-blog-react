@@ -29,6 +29,7 @@ import { HighlightsTab } from "./pages/home/tabs/HighlightsTab";
 // Protected Route Component
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
+
 function App() {
   return (
     <QueryClientProvider client={new QueryClient()}>

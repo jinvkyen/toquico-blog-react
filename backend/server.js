@@ -5,6 +5,7 @@ import bcrypt from "bcrypt";
 import User from "./Schema/User.js";
 import { nanoid } from "nanoid";
 import jwt from "jsonwebtoken";
+import cors from 'cors'
 
 const server = express();
 let PORT = process.env.PORT;
@@ -42,6 +43,8 @@ const generateUsername = async (email) => {
 
 // to use json body
 server.use(express.json());
+
+server.use(cors())
 
 // for the registration - fullname, email and password
 server.post("/user/register", (req, res) => {
