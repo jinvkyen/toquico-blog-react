@@ -15,7 +15,7 @@ function Contents() {
         <div className='col-span-1'>
           <img
             src='/assets/images/desk-toqs.png'
-            className='md:ml-16 h-auto w-auto flex-grow object-cover rounded-full bg-gradient-to-b from-toquiPrimary to-yellow-100'
+            className='md:ml-16 h-auto w-auto flex-grow object-cover rounded-full bg-gradient-to-r from-yellow-50 to-pink-800'
             alt='Toquipush'
           />
         </div>
@@ -25,7 +25,7 @@ function Contents() {
           <h2 className='mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
             About <span className='text-pink-800 font-black'>Her</span>
           </h2>
-          <div className='text-gray-800 text-left text-wrap'>
+          <div className='text-gray-900 text-left text-wrap'>
             <p className='text-base'>
               She was born in a different home, where she lived with her mother and sister. As she grew older, she and
               her sibling were given away by their previous owners. Her new owner bought her just before his
@@ -64,7 +64,7 @@ function Contents() {
       </div>
       {/* Personality Traits */}
       <div className='md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
-        <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+        <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium leading-tight'>
           <span className='text-pink-800 font-black'>Personality</span> Traits
         </h2>
         <div className='p-4 mb-24'>
@@ -77,11 +77,11 @@ function Contents() {
           <div className='flex flex-wrap'>
             <div className='w-full'>
               <div className='mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20'>
-                <span className='mb-2 block text-lg font-semibold text-yellow-700'>FAQ</span>
+                <span className='mb-2 block text-lg font-semibold text-yellow-800'>FAQ</span>
                 <h2 className='leading-tight mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
                   Favorite <span className='text-pink-800 font-black'>Foods</span>
                 </h2>
-                <p className='dark:text-dark-6 text-gray-800'>
+                <p className='dark:text-dark-6 text-gray-900 text-base text-pretty md:text-balance'>
                   Toqui loves to eat! (a lot...) Below are some interesting facts about her favorite foods:
                 </p>
               </div>

@@ -9,7 +9,7 @@ const AccordionItem = ({ header, text }) => {
     <div className='mb-8 ml-0 lg:-ml-12 xl:-ml-48 w-auto relative md:left-10 md:w-[450px] rounded-lg dark:bg-dark-2 dark:shadow-[0px_20px_95px_0px_rgba(0,0,0,0.30)]'>
       <button className={`faq-btn flex w-full text-left items-center`} onClick={() => handleToggle()}>
         <div className='w-full'>
-          <p className='mt-1 text-gray-800 font-semibold text-dark dark:text-white text-base md:text-lg'>{header}</p>
+          <p className='mt-1 text-gray-900 font-bold text-dark dark:text-white text-base md:text-lg'>{header}</p>
         </div>
         <div className='ml-5 flex h-10 w-full max-w-[60px] items-center justify-center rounded-lg text-primary dark:bg-white/5'>
           <svg
@@ -27,10 +27,10 @@ const AccordionItem = ({ header, text }) => {
         </div>
       </button>
 
-      <div className={`p-5 text-pretty duration-200 ease-in-out ${active ? "block" : "hidden"}`}>
-        <p className='text-gray-800 text-tiny md:text-base leading-relaxed text-body-color dark:text-dark-6'>{text}</p>
+      <div className={`pt-5 text-pretty duration-200 ease-in-out ${active ? "block" : "hidden"}`}>
+        <p className='text-gray-900/80 text-tiny md:text-base leading-relaxed dark:text-dark-6'>{text}</p>
       </div>
-      <hr className='border-t border-gray-700 mt-12' />
+      <hr className='border-t border-gray-900/10 mt-8' />
     </div>
   );
 };

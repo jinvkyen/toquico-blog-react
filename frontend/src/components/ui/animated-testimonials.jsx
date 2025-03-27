@@ -100,8 +100,8 @@ export const AnimatedTestimonials = ({
               duration: 0.2,
               ease: "easeInOut",
             }}>
-            <h3 className='text-2xl md:text-3xl font-bold text-black dark:text-white'>{testimonials[active].name}</h3>
-            <p className='text-sm text-gray-700 dark:text-neutral-500'>{testimonials[active].date}</p>
+            <h3 className='mt-6 text-xl md:text-3xl md:text-nowrap font-bold text-gray-900 dark:text-white leading-tight'>{testimonials[active].name}</h3>
+            <p className='text-sm text-gray-600 dark:text-neutral-500'>{testimonials[active].date}</p>
             <motion.p className='mt-3 text-base text-gray-800 dark:text-neutral-300'>
               {testimonials[active].quote.split(" ").map((word, index) => (
                 <motion.span
