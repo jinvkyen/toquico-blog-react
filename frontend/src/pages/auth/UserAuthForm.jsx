@@ -27,7 +27,7 @@ const UserAuthForm = ({ type }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let serverRoute = type == "Sign In" ? "/user/login" : "/user/register";
+    let serverRoute = type == "Sign In" ? "/login" : "/register";
 
     // eslint-disable-next-line no-useless-escape
     let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // regex for email
@@ -138,14 +138,14 @@ const UserAuthForm = ({ type }) => {
           {type == "Sign In" ? (
             <p className='mt-8 text-gray-800 text-base text-center'>
               Don't have an account?
-              <Link to='/user/register' className='underline text-pink-700 text-base ml-1'>
+              <Link to='/register' className='underline text-pink-700 text-base ml-1'>
                 Register here
               </Link>
             </p>
           ) : (
             <p className='mt-8 text-gray-800 text-base text-center'>
               Already a member?
-              <Link to='/user/login' className='underline text-pink-700 text-base ml-1'>
+              <Link to='/login' className='underline text-pink-700 text-base ml-1'>
                 Sign In here
               </Link>
             </p>

@@ -27,7 +27,7 @@ export const HighlightsTab = () => {
 
               <div className='grid grid-cols-2 gap-4'>
                 {/* buttons */}
-                <Link to='/user/login'>
+                <Link to='/login'>
                   <button className='cursor-pointer rounded-md bg-pink-700 px-6 py-2.5 text-tiny md:text-base font-medium text-white transition-colors hover:bg-pink-700/80 focus:outline-none'>
                     Join toqui co.
                   </button>

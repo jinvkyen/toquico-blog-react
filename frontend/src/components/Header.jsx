@@ -50,13 +50,13 @@ function Header() {
               Fun Facts
             </span>
           </Link>
-          <Link to='/user/login' className='logo flex items-center space-x-2 z-50'>
+          <Link to='/login' className='logo flex items-center space-x-2 z-50'>
             {/* Link to */}
             <button className='cursor-pointer rounded-md border border-gray-100/50 bg-white/10 px-6 py-2.5 text-tiny font-medium text-gray-50/80 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Sign In
             </button>
           </Link>
-          <Link to='/user/register' className='logo flex items-center space-x-2 z-50'>
+          <Link to='/register' className='logo flex items-center space-x-2 z-50'>
             <button className='cursor-pointer rounded-md bg-gray-900 px-3.5 py-3 text-tiny font-medium text-gray-50/80 transition-colors hover:bg-gray-900/70 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
               Sign Up 🐰
             </button>

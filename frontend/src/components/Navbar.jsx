@@ -13,7 +13,7 @@ const Navbar = () => {
     <nav className='fixed w-full navbar font-satoshi z-50 bg-white overflow-visible'>
       <div className='flex justify-between items-center px-6 py-4 border-b border-gray-100'>
         <div className='flex items-center space-x-4'>
-          <Link to='/user' className='flex items-center space-x-2'>
+          <Link to='/' className='flex items-center space-x-2'>
             <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-12 h-12 p-2 rounded-full bg-pink-700' />
             <p className='text-gray-800 text-lg md:text-2xl font-black'>toqui co.</p>
           </Link>
@@ -65,11 +65,11 @@ const Navbar = () => {
         </div>
 
         <div className='flex items-center space-x-4'>
-          <Link to='/user/editor' className='hidden md:flex items-center gap-2 text-gray-500'>
+          <Link to='/editor' className='hidden md:flex items-center gap-2 text-gray-500'>
             Write <Pen size={20} />
           </Link>
 
-          <Link to='/user/login'>
+          <Link to='/login'>
             <button
               className='
               rounded-md
@@ -83,7 +83,7 @@ const Navbar = () => {
             </button>
           </Link>
 
-          <Link to='/user/register' className='hidden md:block'>
+          <Link to='/register' className='hidden md:block'>
             <button
               className='
               rounded-md

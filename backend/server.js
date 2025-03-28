@@ -47,7 +47,7 @@ server.use(express.json());
 server.use(cors())
 
 // for the registration - fullname, email and password
-server.post("/user/register", (req, res) => {
+server.post("/register", (req, res) => {
   let { fullname, email, password } = req.body;
 
   // validating the data from frontend
@@ -110,7 +110,7 @@ server.post("/user/register", (req, res) => {
 });
 
 // sign in
-server.post("/user/login", (req, res) => {
+server.post("/login", (req, res) => {
   let { email, password } = req.body;
 
   User.findOne({ "personal_info.email": email })
