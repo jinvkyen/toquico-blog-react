@@ -52,6 +52,16 @@ server.post("/user/register", (req, res) => {
 
   // validating the data from frontend
 
+  if (!fullname) {
+    return res.status(403).json({"error": "Visible missing fields."})
+  }
+  if (!email) {
+    return res.status(403).json({ error: "Visible missing fields." });
+  }
+  if (!password) {
+    return res.status(403).json({ error: "Visible missing fields." });
+  }
+
   if (fullname.length < 5) {
     return res.status(403).json({ error: "Full name is not short." });
   }
@@ -106,7 +116,7 @@ server.post("/user/login", (req, res) => {
   User.findOne({ "personal_info.email": email })
     .then((user) => {
       if (!user) {
-        return res.status(403).json({ error: "Email not found." });
+        return res.status(403).json({ error: "Enter your credentials." });
       }
 
       bcrypt.compare(password, user.personal_info.password, (err, result) => {

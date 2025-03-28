@@ -1,20 +1,24 @@
 import { Link } from "react-router-dom";
 import { InputBox } from "@/components/ui/InputBox";
 import AnimatedContent from "@/components/with-motion/AnimatedContent";
-import { useRef } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
+import { storeInSession } from "@/common/session";
 
 
 const UserAuthForm = ({ type }) => {
-  const authForm = useRef();
 
   const userAuthThroughServer = (serverRoute, formData) => {
 
     axios.post(import.meta.env.VITE_SERVER_DOMAIN + serverRoute, formData)
       .then(({ data }) => {
-        console.log(data)
-      }).catch(({ response }) => {
+        // console.log(data)
+        storeInSession("user", JSON.stringify(data));
+
+        console.log(sessionStorage);
+      })
+
+      .catch(({ response }) => {
         toast.error(response.data.error);
       })
     }
@@ -30,11 +34,12 @@ const UserAuthForm = ({ type }) => {
     let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
 
     // form data
-    let form = new FormData(authForm.current);
+    // eslint-disable-next-line no-undef
+    let form = new FormData(formElement);
+
     console.log(form);
 
     let formData = {};
-
     for (let [key, value] of form.entries()) {
       formData[key] = value;
     }
@@ -42,16 +47,13 @@ const UserAuthForm = ({ type }) => {
     console.log(formData);
 
     let { fullname, email, password } = formData;
+
     // form validation
-
-    
-
     if (fullname) {
       if (fullname.length < 5) {
         return toast.error("Full name is not short.");
       }
     }
-
     if (email) {
       if (!email.length) {
         return toast.error("Email is invalid.");
@@ -79,7 +81,7 @@ const UserAuthForm = ({ type }) => {
     <AnimatedContent>
       <section className='h-cover flex items-center justify-center font-satoshi mt-8'>
         <Toaster />
-        <form action='' ref={authForm} className='w-[80%] max-w-[400px]'>
+        <form action='' id="formElement" className='w-[80%] max-w-[400px]'>
           <h1 className='text-2xl md:text-3xl capitalize text-center font-bold'>
             {type == "Sign In" ? "Welcome Back" : "Join the Club"}
           </h1>
