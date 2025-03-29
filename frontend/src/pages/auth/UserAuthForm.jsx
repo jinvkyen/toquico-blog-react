@@ -13,16 +13,17 @@ const UserAuthForm = ({ type }) => {
 
   let {userAuth: {access_token}, setUserAuth} = useContext(UserContext)
 
-  console.log(access_token);
+  // console.log(access_token);
 
   const userAuthThroughServer = (serverRoute, formData) => {
 
     axios.post(import.meta.env.VITE_SERVER_DOMAIN + serverRoute, formData)
       .then(({ data }) => {
+
         // console.log(data);
 
         storeInSession("user", JSON.stringify(data))
-        
+
         setUserAuth(data)
       })
 
@@ -86,7 +87,7 @@ const UserAuthForm = ({ type }) => {
 
 
   return access_token ? (
-    <Navigate to='/' />
+    <Navigate to='/login' />
   ) : (
     <AnimatedContent>
       <section className='h-cover flex items-center justify-center font-satoshi mt-8'>
