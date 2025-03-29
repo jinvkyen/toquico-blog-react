@@ -1,21 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { InputBox } from "@/components/ui/InputBox";
 import AnimatedContent from "@/components/with-motion/AnimatedContent";
 import toast, { Toaster } from "react-hot-toast";
 import axios from "axios";
 import { storeInSession } from "@/common/session";
+import { useContext } from "react";
+import { UserContext } from "@/App";
 
 
 const UserAuthForm = ({ type }) => {
+
+
+  let {userAuth: {access_token}, setUserAuth} = useContext(UserContext)
+
+  console.log(access_token);
 
   const userAuthThroughServer = (serverRoute, formData) => {
 
     axios.post(import.meta.env.VITE_SERVER_DOMAIN + serverRoute, formData)
       .then(({ data }) => {
-        // console.log(data)
-        storeInSession("user", JSON.stringify(data));
+        // console.log(data);
 
-        console.log(sessionStorage);
+        storeInSession("user", JSON.stringify(data))
+        
+        setUserAuth(data)
       })
 
       .catch(({ response }) => {
@@ -77,11 +85,13 @@ const UserAuthForm = ({ type }) => {
   };
 
 
-  return (
+  return access_token ? (
+    <Navigate to='/' />
+  ) : (
     <AnimatedContent>
       <section className='h-cover flex items-center justify-center font-satoshi mt-8'>
         <Toaster />
-        <form action='' id="formElement" className='w-[80%] max-w-[400px]'>
+        <form action='' id='formElement' className='w-[80%] max-w-[400px]'>
           <h1 className='text-2xl md:text-3xl capitalize text-center font-bold'>
             {type == "Sign In" ? "Welcome Back" : "Join the Club"}
           </h1>

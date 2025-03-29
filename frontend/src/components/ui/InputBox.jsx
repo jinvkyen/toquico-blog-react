@@ -14,6 +14,7 @@ export const InputBox = ({ name, type, id, value, placeholder, icon }) => {
           id={id}
           defaultValue={value}
           placeholder={placeholder}
+          autoComplete="current-password"
         />
         <i className={"absolute left-4 top-1/2 -translate-y-1/2 text-gray-700/50 ph " + icon}></i>
 

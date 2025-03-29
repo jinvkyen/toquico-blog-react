@@ -27,9 +27,9 @@ export const Timeline = ({ data }) => {
     <div className='w-full text-white dark:bg-neutral-950 md:px-10 font-satoshi' ref={containerRef}>
       <div className='max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10'>
         <h2 className='text-xl md:text-4xl mb-4 dark:text-white max-w-4xl'>This is the sacred timeline</h2>
-        <blockquote class='text-base md:text-lg italic font-medium text-gray-200/60 dark:text-white text-balance'>
+        <blockquote className='text-base md:text-lg italic font-medium text-gray-200/60 dark:text-white text-balance'>
           <svg
-            class='w-8 h-8 text-pink-800/70 dark:text-gray-600 mb-4'
+            className='w-8 h-8 text-pink-800/70 dark:text-gray-600 mb-4'
             aria-hidden='true'
             xmlns='http://www.w3.org/2000/svg'
             fill='currentColor'

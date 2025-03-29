@@ -21,10 +21,10 @@ let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // regex for pass
 
 // formatting data to send
 const formatDatatoSend = (user) => {
-  const acces_token = jwt.sign({ id: user._id }, process.env.SECRET_ACCESS_KEY);
+  const access_token = jwt.sign({ id: user._id }, process.env.SECRET_ACCESS_KEY);
 
   return {
-    acces_token,
+    access_token,
     profile_img: user.personal_info.profile_img,
     username: user.personal_info.username,
     fullname: user.personal_info.fullname,
