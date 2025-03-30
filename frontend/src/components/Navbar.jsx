@@ -20,8 +20,14 @@ const Navbar = () => {
   };
 
   const handleNavPanel = () => {
-    setNavPanel(currenVal => !currenVal);
-  }
+    setNavPanel((currenVal) => !currenVal);
+  };
+
+  const handleOnBlur = () => {
+    setTimeout(() => {
+      setNavPanel(false);
+    }, 300)
+  };
 
   return (
     <>
@@ -94,15 +100,11 @@ const Navbar = () => {
                   </button>
                 </Link>
 
-                <div className='relative' onClick={handleNavPanel}>
+                <div className='relative' onClick={handleNavPanel} onBlur={handleOnBlur}>
                   <button className='w-10 h-10 rounded-full bg-gray-100 relative hover:bg-black/10 '>
                     <img src={profile_img} className='w-full h-full rounded-full object-cover' />
                   </button>
-                  {
-                    navPanel ?
-                      <UserNavigationPanel />
-                      : ""
-                  }
+                  {navPanel ? <UserNavigationPanel /> : ""}
                 </div>
               </>
             ) : (
