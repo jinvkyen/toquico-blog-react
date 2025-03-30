@@ -57,7 +57,7 @@ export const FunFactsTab = () => {
   return (
     <div className='relative -top-16 font-satoshi'>
       {/* Hero Section for Fun Facts */}
-      <div className='bg-gradient-to-r from-pink-100 to-pink-400/50 dark:from-purple-900 dark:to-pink-900 p-12 mb-12 min-h-screen'>
+      <div className='bg-gradient-to-r from-pink-100 to-pink-400/50 dark:from-purple-900 dark:to-pink-900 py-12 px-4 mb-12 min-h-screen'>
         <AnimatedContent
           distance={100}
           direction='vertical'
@@ -67,15 +67,15 @@ export const FunFactsTab = () => {
           animateOpacity
           scale={1.0}
           threshold={0.1}>
-          <div className='xl:mx-32 flex flex-col md:flex-row items-center relative top-10 md:top-32'>
+          <div className='xl:mx-32 flex flex-col md:flex-row items-center relative top-12 md:top-32'>
             <div className='md:w-3/5 mb-6 md:mb-0 md:pr-8'>
-              <h1 className='text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-tight mb-4'>
-                Fascinating Facts About <span className='text-toquiPrimary dark:text-pink-400'>Toqui</span>
+              <h1 className='text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-none mb-4 text-balance'>
+                Fun Facts About <span className='text-pink-700 dark:text-pink-400'>Toqui</span>
               </h1>
-              <p className='text-lg xl:text-xl text-gray-700 dark:text-gray-300 mb-6'>
+              <p className='text-base sm:text-lg xl:text-xl text-gray-700 dark:text-gray-300 mb-4'>
                 Discover the quirky, adorable, and sometimes surprising world of our beloved bunny companion!
               </p>
-              <div className='flex flex-wrap gap-3'>
+              <div className='flex flex-wrap gap-2'>
                 <span className='bg-white dark:bg-gray-800 px-4 py-2 rounded-full text-sm xl:text-tiny font-medium text-gray-700 dark:text-gray-300'>
                   🥕 Eating Habits
                 </span>
@@ -88,11 +88,11 @@ export const FunFactsTab = () => {
               </div>
             </div>
             <div className='md:w-2/5'>
-              <div className='bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg transform rotate-2'>
+              <div className='bg-white dark:bg-gray-800 p-2 rounded-lg shadow-lg transform rotate-3'>
                 <img
                   src='/assets/images/gallery/beep.jfif'
                   alt='Toqui the bunny'
-                  className='w-full h-64 object-cover rounded-md'
+                  className='w-full h-52 md:h-64 object-cover rounded-md'
                 />
                 <div className='absolute -bottom-3 -right-3 bg-yellow-400 text-gray-900 font-bold px-4 py-1 rounded-full transform rotate-12 shadow-md'>
                   Did you know?
@@ -116,10 +116,10 @@ export const FunFactsTab = () => {
           threshold={0.1}>
           <div className='border-b pb-6 mb-10'>
             <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white'>Fun Facts</h2>
-            <div className='flex items-center mt-4 text-base text-gray-600 dark:text-gray-300'>
-              <span>It's a joy to share these fun facts about Toqui!</span>
+            <div className='flex items-center mt-4 text-base text-gray-700 dark:text-gray-700'>
+              <span className='text-pretty'>It's a joy to share these fun facts about Toqui!</span>
               <span className='mx-2'>•</span>
-              <span>10 min read</span>
+              <span className='text-tiny text-nowrap'>20 min read</span>
             </div>
           </div>
         </AnimatedContent>
@@ -147,8 +147,8 @@ export const FunFactsTab = () => {
                         <img src={fact.avatar} alt='Author' className='w-8 h-8 rounded-full mr-3' />
                         {/* author name */}
                         <span className='text-sm font-medium'>{fact.name}</span>
-                        <span className='mx-2 text-gray-400'>•</span>
-                        <span className='text-sm text-gray-500'>Pinned</span>
+                        <span className='mx-2 text-gray-800'>•</span>
+                        <span className='text-sm text-gray-800'>Pinned</span>
                       </div>
                       {/* title */}
                       <h2 className='text-xl md:text-2xl font-bold mb-3 text-gray-900 dark:text-white'>{fact.title}</h2>
@@ -223,7 +223,7 @@ export const FunFactsTab = () => {
                 <img
                   src='/assets/rabbit.png'
                   alt='Toqui Co Logo'
-                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-600 bg-pink-600 p-2'
+                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-700 bg-pink-700 p-2'
                 />
                 <h3 className='font-bold text-lg mb-2 text-gray-900 dark:text-white'>About Toqui Co.</h3>
                 <p className='text-gray-700 dark:text-gray-300 text-tiny mb-4'>

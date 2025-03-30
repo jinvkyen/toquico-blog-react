@@ -1,8 +1,8 @@
 import NotFoundPage from "../NotFoundPage";
 function ProfilePage() {
   return (
-    <div>
-      <NotFoundPage />
+    <div className=''>
+      <h1>Profile page</h1>
     </div>
   );
 }

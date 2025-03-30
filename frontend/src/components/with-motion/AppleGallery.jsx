@@ -7,8 +7,8 @@ export function AppleGallery() {
 
   return (
     <div className='w-full h-full py-20'>
-      <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium xl:pl-20 pl-6'>
-        <span className='text-toquiPrimary font-black'>Gallery</span>
+      <h2 className='mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium xl:pl-20 pl-6'>
+        <span className='text-pink-800 font-black'>Gallery</span>
       </h2>
       <Carousel items={cards} />
     </div>
@@ -67,4 +67,3 @@ const bebi = defaultItems.map((item) => ({
   src: item.image,
   content: <Content title={item.text} src={item.image} />,
 }));
-

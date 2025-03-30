@@ -9,31 +9,30 @@ function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
   return (
-    <div className='container mx-auto font-satoshi mt-8 px-0 w-full'>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center p-6'>
+    <div id='about-her' className='container mx-auto font-satoshi mt-8 px-0 w-full'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center'>
         {/* Column 1 */}
         <div className='col-span-1'>
           <img
             src='/assets/images/desk-toqs.png'
-            className='md:ml-16 h-auto w-auto flex-grow object-cover rounded-full bg-gradient-to-b from-toquiPrimary to-yellow-100'
+            className='md:ml-16 h-auto max-w-80 flex-grow object-cover rounded-full bg-gradient-to-r from-yellow-50 to-pink-800'
             alt='Toquipush'
           />
         </div>
 
         {/* Column 2 */}
-        <div className='rounded-lg col-span-2 justify-start mt-8 md:mx-24 mx-auto ml-0'>
-          <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-            About <span className='text-toquiPrimary font-black'>Her</span>
+        <div className='rounded-lg col-span-2 justify-center items-center mt-0 md:ml-24 md:mr-20 mx-auto ml-0'>
+          <h2 className='mb-6 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+            About <span className='text-pink-800 font-black'>Her</span>
           </h2>
-          <div className='text-gray-800 text-left text-wrap'>
+          <div className='text-gray-900 text-left'>
             <p className='text-base'>
               She was born in a different home, where she lived with her mother and sister. As she grew older, she and
               her sibling were given away by their previous owners. Her new owner bought her just before his
               granddaughter’s birthday. In her new household, her birthday is celebrated on December 18, 2019.
             </p>
             <br />
-            <br />
-            <p>
+            <p className='text-base'>
               She is 5{" "}
               <span
                 ref={anchorRef}
@@ -46,11 +45,11 @@ function Contents() {
             </p>
             {isVisible && (
               <div
-                className='relative left-1/3 -translate-x-1/2 -top-24 p-4 bg-gray-50 shadow-lg rounded-lg
-                   text-white w-56 z-1 flex flex-col items-center'>
+                className='absolute -mt-16 z-10 bg-gray-50 shadow-lg rounded-lg p-4 text-white
+            w-56 flex flex-col items-center'>
                 <button
-                  className='absolute right-0 top-0 bg-transparent rounded-md p-4 justify-end
-                     text-black transition-all duration-300 ease-in-out'
+                  className='absolute right-0 top-0 bg-transparent rounded-md p-4
+              text-black transition-all duration-300 ease-in-out'
                   onClick={() => setIsVisible(false)}>
                   <X size={16} />
                 </button>
@@ -63,11 +62,13 @@ function Contents() {
         </div>
       </div>
       {/* Personality Traits */}
-      <div className='md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center mt-32'>
-        <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-          <span className='text-toquiPrimary font-black'>Personality</span> Traits
+      <div className='mt-12 md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
+        <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium leading-tight'>
+          <span className='text-pink-800 font-black'>Personality</span> Traits
         </h2>
-        <Personalities />
+        <div className='p-4 mb-24'>
+          <Personalities />
+        </div>
       </div>
       {/* Favorite Foods - FAQ */}
       <section className='relative z-20 overflow-hidden dark:bg-dark lg:pb-[90px] lg:pt-[120px]'>
@@ -75,11 +76,11 @@ function Contents() {
           <div className='flex flex-wrap'>
             <div className='w-full'>
               <div className='mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20'>
-                <span className='mb-2 block text-lg font-semibold text-red-500'>FAQ</span>
-                <h2 className='mb-4 text-3xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-                  Favorite <span className='text-toquiPrimary font-black'>Foods</span>
+                <span className='mb-2 block text-lg font-semibold text-yellow-800'>FAQ</span>
+                <h2 className='leading-tight mb-4 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
+                  Favorite <span className='text-pink-800 font-black'>Foods</span>
                 </h2>
-                <p className='dark:text-dark-6 text-gray-800'>
+                <p className='dark:text-dark-6 text-gray-900 text-base text-pretty md:text-balance'>
                   Toqui loves to eat! (a lot...) Below are some interesting facts about her favorite foods:
                 </p>
               </div>
@@ -123,7 +124,7 @@ function Contents() {
                   </div>
                 </div>
                 <div className='col-span-1'>
-                  <div className='grid grid-cols-1 xl:grid-cols-2 gap-2 place-items-center'>
+                  <div className='grid grid-cols-1 md:grid-cols-2 gap-2 place-items-center'>
                     <BlogCard />
                   </div>
                 </div>
@@ -139,12 +140,12 @@ function Contents() {
       </section>
 
       {/* Video Section */}
-      <section className='mx-auto flex flex-col items-center justify-center py-16 md:py-24 px-4 max-w-5xl'>
-        <h2 className='mb-3 text-2xl md:text-[40px]/[48px] font-medium text-center text-dark dark:text-white'>
-          <span className='text-toquiPrimary font-black'>Fyrst sceawung</span>
+      <section className='mx-auto flex flex-col items-center justify-center py-16 md:py-24 px-0 max-w-5xl'>
+        <h2 className='mb-3 text-3xl md:text-4xl font-medium text-center text-dark dark:text-white'>
+          <span className='text-pink-800 font-black'>Fyrst sceawung</span>
         </h2>
 
-        <p className='text-base text-gray-700 dark:text-gray-300 max-w-2xl font-normal leading-relaxed text-center mb-8'>
+        <p className='text-base text-gray-900/70 dark:text-gray-300 max-w-2xl font-normal leading-tight text-center mb-8'>
           This is the first video we took of Toqui when she first arrived in our home, and it's a special moment that
           we'll always treasure.
         </p>
@@ -157,7 +158,7 @@ function Contents() {
           </div>
 
           {/* Video container */}
-          <div className='bg-gray-300/90 w-full p-3 md:p-5'>
+          <div className='bg-gray-300 w-full p-3 md:p-5'>
             <div className='w-full rounded overflow-hidden'>
               <video
                 className='w-full aspect-video object-cover bg-black'
@@ -172,7 +173,7 @@ function Contents() {
         </div>
 
         {/* Optional Caption */}
-        <p className='text-tiny text-gray-600 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
+        <p className='text-tiny text-pretty text-gray-600 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
           First days of Toqui enjoying her new home, December 2019.
         </p>
       </section>

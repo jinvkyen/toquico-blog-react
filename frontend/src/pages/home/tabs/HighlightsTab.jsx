@@ -6,7 +6,7 @@ export const HighlightsTab = () => {
   return (
     <div className='min-h-screen flex items-center justify-center px-4 py-4 font-satoshi'>
       <div className='flex flex-col'>
-        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-8 mx-auto'>
+        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-4 md:p-8 mx-auto'>
           {/* Main Hero Content */}
           <AnimatedContent
             distance={100}
@@ -25,21 +25,22 @@ export const HighlightsTab = () => {
                 </h1>
               </div>
 
-              {/* buttons */}
-              <div className='flex flex-col sm:flex-row gap-4'>
+              <div className='grid grid-cols-2 gap-4'>
+                {/* buttons */}
+                <Link to='/login'>
+                  <button className='cursor-pointer rounded-md bg-pink-700 px-6 py-2.5 text-tiny md:text-base font-medium text-white transition-colors hover:bg-pink-700/80 focus:outline-none'>
+                    Join toqui co.
+                  </button>
+                </Link>
                 {/* Link to */}
-                <button className='cursor-pointer rounded-md bg-toquiPrimary px-6 py-2.5 text-tiny md:text-base font-medium text-white transition-colors hover:bg-toquiPrimary/80 focus:outline-none'>
-                  Join toqui co.
-                </button>
-                {/* Link to */}
-                <button className='cursor-pointer rounded-md border border-gray/20 bg-white/10 px-6 py-2.5 text-tiny md:text-base font-medium text-gray-700 backdrop-blur-sm transition-colors hover:bg-white/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
+                <button className='cursor-pointer rounded-md border border-gray/20 bg-gray-50/10 px-6 py-2.5 text-tiny md:text-base font-medium text-gray-700 backdrop-blur-sm transition-colors hover:bg-gray-200/20 focus:ring-2 focus:ring-white/20 focus:ring-offset-2 focus:ring-offset-black focus:outline-none'>
                   Read more
                 </button>
               </div>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-              <div className='flex items-center'>
+              <div className='flex items-center justify-center -mt-4 md:-mt-0 '>
                 <div className='flex -space-x-3'>
                   <div className='w-10 h-10 rounded-full bg-red-400 border-2 border-white'>
                     <img
@@ -148,11 +149,11 @@ export const HighlightsTab = () => {
                     </p>
 
                     <div className='flex justify-between items-center'>
-                      <a
-                        href='/timeline'
-                        className='inline-flex items-center text-pink-600 font-medium text-sm hover:text-pink-700 transition-colors'>
-                        Explore Toqui's timeline <ArrowRight size={14} />
-                      </a>
+                      <Link to='timeline'>
+                        <p className='inline-flex items-center text-pink-600 font-medium text-sm hover:text-pink-700 transition-colors'>
+                          Explore Toqui's timeline <ArrowRight size={14} />
+                        </p>
+                      </Link>
 
                       <div className='flex -space-x-2'>
                         <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-red-400 border-2 border-white'>
@@ -239,7 +240,7 @@ export const HighlightsTab = () => {
             </div>
           </AnimatedContent>
         </div>
-        <div className='flex flex-col justify-center items-center mt-20 max-w-7xl w-full p-8 mx-auto'>
+        <div className='flex flex-col justify-center items-center mt-20 max-w-7xl w-full mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-12 gap-8'>
             <div className='md:col-span-8'>
               {/* Content Section */}
@@ -255,7 +256,9 @@ export const HighlightsTab = () => {
                 <div className='max-w-2xl mx-auto antialiased relative'>
                   {dummyContent.map((item, index) => (
                     <div key={`content-${index}`} className='mb-20'>
-                      <h2 className='bg-yellow-500/70 text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>{item.badge}</h2>
+                      <h2 className='bg-yellow-500/70 text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>
+                        {item.badge}
+                      </h2>
 
                       <p className='text-xl mb-4 font-bold'>{item.title}</p>
 
@@ -277,28 +280,29 @@ export const HighlightsTab = () => {
               </AnimatedContent>
             </div>
             <div className='md:col-span-4'>
-              {/* Fun Fact of the Day */}
+              {/* Highlight of the Day */}
               <div className='bg-yellow-50 dark:bg-yellow-900/30 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 mb-8'>
                 <div className='flex flex-col items-start'>
                   <h3 className='font-bold text-lg text-gray-900 dark:text-white mb-3'>✨Highlight of the Day</h3>
-                <img
-                  src='/assets/images/derp-face.jpg'
-                  alt='Toquipush'
-                  className='w-full h-40 mb-4 object-cover border-4 border-yellow-500/70 rounded-3xl'
-                />
+                  <img
+                    src='/assets/images/derp-face.jpg'
+                    alt='Toquipush'
+                    className='w-full h-40 mb-4 object-cover border-4 border-yellow-500/70 rounded-3xl'
+                  />
                 </div>
                 <p className='text-gray-700 dark:text-gray-300 text-tiny mb-3 text-left leading-tight'>
-                  Toqui's derp face is a guaranteed mood-booster. Her little bunny brain gets so excited when she sees food that her face scrunches up into the most adorable, hilarious expression.And honestly, who can blame her? Food is the best.
+                  Toqui's derp face is a guaranteed mood-booster. Her little bunny brain gets so excited when she sees
+                  food that her face scrunches up into the most adorable, hilarious expression.And honestly, who can
+                  blame her? Food is the best.
                 </p>
                 <div className='text-sm text-gray-500'>March 24, 2025</div>
               </div>
-
               {/* About Section */}
               <div className='bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8'>
                 <img
                   src='/assets/rabbit.png'
                   alt='Toqui Co Logo'
-                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-600 bg-pink-600 p-2'
+                  className='w-16 h-16 rounded-full mb-4 border-2 border-pink-700 bg-pink-700 p-2'
                 />
                 <h3 className='font-bold text-lg mb-2 text-gray-900 dark:text-white'>About Toqui Co.</h3>
                 <p className='text-gray-700 dark:text-gray-300 text-tiny mb-4'>
