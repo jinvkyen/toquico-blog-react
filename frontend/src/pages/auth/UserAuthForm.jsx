@@ -20,7 +20,7 @@ const UserAuthForm = ({ type }) => {
     axios.post(import.meta.env.VITE_SERVER_DOMAIN + serverRoute, formData)
       .then(({ data }) => {
 
-        // console.log(data);
+        console.log(data);
 
         storeInSession("user", JSON.stringify(data))
 
@@ -157,7 +157,7 @@ const UserAuthForm = ({ type }) => {
             <p className='mt-8 text-gray-800 text-base text-center'>
               Already a member?
               <Link to='/login' className='underline text-pink-700 text-base ml-1'>
-                Sign In here
+                Login here
               </Link>
             </p>
           )}

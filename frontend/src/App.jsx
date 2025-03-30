@@ -55,8 +55,8 @@ function App() {
               <Route path='fun-facts' element={<FunFactsTab />} />
               <Route path='highlights' element={<HighlightsTab />} />
               {/* not sure */}
-              <Route path='blog' element={<BlogListPage />} />
-              <Route path='blog/:id' element={<BlogDetailPage />} />
+              {/* <Route path='blog' element={<BlogListPage />} />
+              <Route path='blog/:id' element={<BlogDetailPage />} /> */}
             </Route>
 
             <Route path='/' element={<ProtectedLayout />}>
