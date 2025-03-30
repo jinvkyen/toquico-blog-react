@@ -28,7 +28,7 @@ export function Threecard() {
           <Link to='/home' className='logo flex items-center space-x-2 z-50'>
             Get to know her →
           </Link>
-          <Link to='/user/register' className='logo flex items-center space-x-2 z-50'>
+          <Link to='/login' className='logo flex items-center space-x-2 z-50'>
             <button className='text-tiny md:text-lg rounded-md bg-gray-800 px-6 py-2.5 text-white transition-colors hover:bg-gray-600 focus:outline-none'>
               Sign In
             </button>

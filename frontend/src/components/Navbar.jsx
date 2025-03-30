@@ -28,6 +28,7 @@ const Navbar = () => {
       setNavPanel(false);
     }, 300)
   };
+  
 
   return (
     <>

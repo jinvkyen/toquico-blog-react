@@ -58,6 +58,13 @@ const userSchema = mongoose.Schema(
           }/svg?seed=${profile_imgs_name_list[Math.floor(Math.random() * profile_imgs_name_list.length)]}`;
         },
       },
+      // Github info
+      githubId: String,
+      signup_method: {
+        type: String,
+        enum: ['email', 'github'],
+        default: 'email'
+      }
     },
     social_links: {
       youtube: {

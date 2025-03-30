@@ -126,7 +126,7 @@ const LandingPage = () => {
               <h3 className='text-xl font-semibold mb-2'>Join Our Pet-Loving Community</h3>
               <p className='opacity-90 mb-4 md:mb-0'>Connect with fellow rabbit or pet owners and share experiences!</p>
             </div>
-            <Link to='/user/login'>
+            <Link to='/login'>
               <button className='px-6 py-3 bg-white text-pink-500 font-medium rounded-full shadow-md hover:shadow-lg hover:bg-gray-50 transition-shadow'>
                 Join Now
               </button>
