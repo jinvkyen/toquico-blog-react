@@ -26,18 +26,17 @@ const Navbar = () => {
   const handleOnBlur = () => {
     setTimeout(() => {
       setNavPanel(false);
-    }, 300)
+    }, 300);
   };
-
 
   return (
     <>
       <nav className='fixed w-full navbar font-satoshi z-50 bg-white overflow-visible'>
         <div className='flex justify-between items-center px-4 py-4 border-b border-gray-100'>
           <div className='flex items-center space-x-4'>
-            <Link to='/' className='flex items-center space-x-2'>
-              <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-12 h-12 p-2 rounded-full bg-pink-700' />
-              <p className='text-gray-800 text-lg md:text-2xl font-black'>toqui co.</p>
+            <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
+              <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-auto h-12 p-2 rounded-full bg-pink-700' />{" "}
+              <p className='text-gray-800 hover:text-gray-800/70 text-2xl font-black'>toqui co.</p>
             </Link>
 
             <div className='hidden md:block relative w-64'>
