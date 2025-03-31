@@ -4,8 +4,10 @@ import { LayoutDashboard, NotebookPenIcon, Settings, UserCircle2Icon } from "luc
 import { Link } from "react-router-dom";
 import { removeInSession } from "@/common/session";
 import FadeContent from "@/animations/FadeContent/FadeContent";
+import { useNavigate } from "react-router-dom";
 
 const UserNavigationPanel = () => {
+  const navigate = useNavigate();
   const {
     userAuth: { username },
     setUserAuth,
@@ -14,6 +16,7 @@ const UserNavigationPanel = () => {
   const signOutUser = () => {
     removeInSession("user");
     setUserAuth({ access_token: null });
+    navigate("/login")
   };
 
   return (

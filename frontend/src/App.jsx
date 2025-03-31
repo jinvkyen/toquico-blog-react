@@ -27,19 +27,39 @@ import { HighlightsTab } from "./pages/home/tabs/HighlightsTab";
 // Protected Route Component
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 
-import { lookInSession } from "./common/session";
+import { lookInSession, storeInSession } from "./common/session";
 
 // eslint-disable-next-line react-refresh/only-export-components
-export const UserContext = createContext({})
+export const UserContext = createContext({});
 
 function App() {
   const [userAuth, setUserAuth] = useState({});
 
   useEffect(() => {
-    let userInSession = lookInSession("user");
-    userInSession ? setUserAuth(JSON.parse(userInSession)) : setUserAuth({ access_token: null })
+    // OAuth callback in the URL
+    const params = new URLSearchParams(window.location.search);
+    const token = params.get("access_token");
+    const username = params.get("username");
+    const profileImg = params.get("profile_img");
 
-  }, [])
+    if (token) {
+      // store the user in session & context
+      const userData = {
+        access_token: token,
+        username: username,
+        profile_img: profileImg,
+      };
+      storeInSession("user", JSON.stringify(userData));
+      setUserAuth(userData);
+
+      window.history.replaceState({}, document.title, window.location.pathname);
+    } else {
+      const userInSession = lookInSession("user");
+      if (userInSession) {
+        setUserAuth(JSON.parse(userInSession));
+      }
+    }
+  }, []);
 
   return (
     <QueryClientProvider client={new QueryClient()}>
@@ -62,8 +82,8 @@ function App() {
             <Route path='/' element={<ProtectedLayout />}>
               <Route path='login' element={<UserAuthForm type={"Sign In"} />} />
               <Route path='register' element={<UserAuthForm type={"Join the Club"} />} />
-              <Route path='profile' element={<ProfilePage />} />
               <Route path='social' element={<SocialFeedPage />} />
+              <Route path='profile' element={<ProfilePage />} />
             </Route>
 
             {/* 404 Route */}

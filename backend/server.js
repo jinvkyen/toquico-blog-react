@@ -6,16 +6,20 @@ import User from "./Schema/User.js";
 import { nanoid } from "nanoid";
 import jwt from "jsonwebtoken";
 import cors from 'cors'
+import admin from 'firebase-admin'
 
 const server = express();
 let PORT = process.env.PORT;
+
+admin.initializeApp({
+  
+})
 
 mongoose.connect(process.env.DB_LOCATION, {
   autoIndex: true,
 });
 
 // register
-
 let emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; // regex for email
 let passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/; // regex for password
 
@@ -44,7 +48,7 @@ const generateUsername = async (email) => {
 // to use json body
 server.use(express.json());
 
-server.use(cors())
+server.use(cors());
 
 // for the registration - fullname, email and password
 server.post("/register", (req, res) => {
@@ -141,6 +145,12 @@ server.post("/login", (req, res) => {
     });
 });
 
+
+// google auth
+server.post('/google-auth', async (req, res) => {
+  let { access_token } = req.body
+
+})
 
 // listening
 server.listen(PORT, () => {

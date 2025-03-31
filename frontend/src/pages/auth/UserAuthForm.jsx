@@ -6,6 +6,7 @@ import { storeInSession } from "@/common/session";
 import { useContext } from "react";
 import { UserContext } from "@/App";
 import FadeContent from "@/animations/FadeContent/FadeContent";
+import {authWithGoogle} from "@/common/firebase"
 
 
 const UserAuthForm = ({ type }) => {
@@ -85,9 +86,20 @@ const UserAuthForm = ({ type }) => {
     userAuthThroughServer(serverRoute, formData);
   };
 
+  const handleGoogleLogin = (e) => {
+    e.preventDefault();
+
+    authWithGoogle().then(user => {
+      console.log(user);
+    }).catch(error => {
+      toast.error("An error has occurred. Trouble logging in.")
+      return console.log(error);
+    })
+  }
+
 
   return access_token ? (
-    <Navigate to='/login' />
+    <Navigate to='/social' />
   ) : (
     <FadeContent>
       <section className='h-cover flex items-center justify-center font-satoshi mt-8'>
@@ -100,7 +112,8 @@ const UserAuthForm = ({ type }) => {
 
             <div className='flex items-center justify-center space-x-4 cursor-pointer py-3'>
               {/* Google */}
-            <span className='p-4 bg-white border border-gray-300 rounded-full hover:drop-shadow-sm hover:bg-black/5'>
+              {/* added on click function */}
+            <span onClick={handleGoogleLogin} className='p-4 bg-white border border-gray-300 rounded-full hover:drop-shadow-sm hover:bg-black/5'>
               <svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='20' height='20' viewBox='0 0 48 48'>
                 <path
                   fill='#fbc02d'
