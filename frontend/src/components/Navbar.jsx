@@ -28,12 +28,12 @@ const Navbar = () => {
       setNavPanel(false);
     }, 300)
   };
-  
+
 
   return (
     <>
       <nav className='fixed w-full navbar font-satoshi z-50 bg-white overflow-visible'>
-        <div className='flex justify-between items-center px-6 py-4 border-b border-gray-100'>
+        <div className='flex justify-between items-center px-4 py-4 border-b border-gray-100'>
           <div className='flex items-center space-x-4'>
             <Link to='/' className='flex items-center space-x-2'>
               <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-12 h-12 p-2 rounded-full bg-pink-700' />
