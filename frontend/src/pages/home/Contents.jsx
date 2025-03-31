@@ -9,13 +9,13 @@ function Contents() {
   const [isVisible, setIsVisible] = useState(true);
   const anchorRef = useRef(null);
   return (
-    <div id='about-her' className='container mx-auto font-satoshi mt-8 px-0 w-full'>
+    <div id='about-her' className='container mx-auto font-satoshi my-10 px-0 w-full'>
       <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center'>
         {/* Column 1 */}
         <div className='col-span-1'>
           <img
             src='/assets/images/desk-toqs.png'
-            className='md:ml-16 h-auto max-w-80 flex-grow object-cover rounded-full bg-gradient-to-r from-yellow-50 to-pink-800'
+            className='md:ml-16 h-auto w-80 flex-grow object-cover rounded-full bg-gradient-to-r from-yellow-50 to-pink-800'
             alt='Toquipush'
           />
         </div>
@@ -62,7 +62,7 @@ function Contents() {
         </div>
       </div>
       {/* Personality Traits */}
-      <div className='mt-12 md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
+      <div className='mt-32 md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
         <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium leading-tight'>
           <span className='text-pink-800 font-black'>Personality</span> Traits
         </h2>
