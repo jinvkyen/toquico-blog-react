@@ -5,15 +5,24 @@ import bcrypt from "bcrypt";
 import User from "./Schema/User.js";
 import { nanoid } from "nanoid";
 import jwt from "jsonwebtoken";
-import cors from 'cors'
-import admin from 'firebase-admin'
+import cors from "cors";
+import admin from "firebase-admin";
+import { getAuth } from "firebase-admin/auth";
+
+// import service account key
+import { readFileSync } from "fs";
+import { error } from "console";
+
+const serviceAccountKey = JSON.parse(
+  readFileSync(new URL("../toqui-co-firebase-adminsdk-fbsvc-4d74332063.json", import.meta.url))
+);
 
 const server = express();
 let PORT = process.env.PORT;
 
 admin.initializeApp({
-  
-})
+  credential: admin.credential.cert(serviceAccountKey),
+});
 
 mongoose.connect(process.env.DB_LOCATION, {
   autoIndex: true,
@@ -57,7 +66,7 @@ server.post("/register", (req, res) => {
   // validating the data from frontend
 
   if (!fullname) {
-    return res.status(403).json({"error": "Visible missing fields."})
+    return res.status(403).json({ error: "Visible missing fields." });
   }
   if (!email) {
     return res.status(403).json({ error: "Visible missing fields." });
@@ -123,6 +132,23 @@ server.post("/login", (req, res) => {
         return res.status(403).json({ error: "Enter your credentials." });
       }
 
+      if (!user.google_auth) {
+        bcrypt.compare(password, user.personal_info.password, (err, result) => {
+          if (err) {
+            return res.status(403).json({ error: "Error occure while logging in, please try again." });
+          }
+
+          if (!result) {
+            // be vague for security reasons
+            return res.status(403).json({ error: "Incorrect credentials." });
+          } else {
+            return res.status(200).json(formatDatatoSend(user));
+          }
+        });
+      } else {
+        return res.status(403).json({"error": "Account was created using Google. Instead, try logging in with your Google account."})
+      }
+
       bcrypt.compare(password, user.personal_info.password, (err, result) => {
         if (err) {
           return res.status(403).json({ error: "Error occure while logging in, please try again." });
@@ -145,12 +171,59 @@ server.post("/login", (req, res) => {
     });
 });
 
-
 // google auth
-server.post('/google-auth', async (req, res) => {
-  let { access_token } = req.body
+server.post("/google-auth", async (req, res) => {
+  let { access_token } = req.body;
 
-})
+  getAuth()
+    .verifyIdToken(access_token)
+    .then(async (decodeUser) => {
+      let { email, name, picture } = decodeUser;
+
+      picture = picture.replace("s96-c", "s384-c");
+
+      let user = await User.findOne({ "personal_info.email": email })
+        .select("personal_info.fullname personal_info.username personal_info.profile_img google_auth")
+        .then((u) => {
+          return u || null;
+        })
+        .catch((err) => {
+          return res.status(500).json({ error: err.message });
+        });
+
+      if (user) {
+        //login
+        if (!user.google_auth) {
+          return res.status(403).json({
+            error: "The email is signed up without google. Please log in with password to access the account.",
+          });
+        }
+      } else {
+        //signup
+
+        let username = await generateUsername(email);
+
+        user = new User({
+          personal_info: { fullname: name, email, profile_img: picture, username },
+          google_auth: true,
+        });
+
+        await user
+          .save()
+          .then((u) => {
+            user = u;
+          })
+          .catch((err) => {
+            return res.status(500).json({ error: err.message });
+          });
+      }
+
+      return res.status(200).json(formatDatatoSend(user));
+    })
+    .catch(() => {
+      return res.status(500).json({ error: "Failed to authenticate with Google, try another account." });
+    });
+});
 
 // listening
 server.listen(PORT, () => {

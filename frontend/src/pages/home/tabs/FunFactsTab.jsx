@@ -69,10 +69,10 @@ export const FunFactsTab = () => {
           threshold={0.1}>
           <div className='xl:mx-32 flex flex-col md:flex-row items-center relative top-12 md:top-32'>
             <div className='md:w-3/5 mb-6 md:mb-0 md:pr-8'>
-              <h1 className='text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900 dark:text-white leading-none mb-4 text-balance'>
+              <h1 className='text-3xl sm:text-4xl md:text-6xl xl:text-7xl font-bold text-gray-900 dark:text-white leading-none mb-4 text-balance'>
                 Fun Facts About <span className='text-pink-700 dark:text-pink-400'>Toqui</span>
               </h1>
-              <p className='text-base sm:text-lg xl:text-xl text-gray-700 dark:text-gray-300 mb-4'>
+              <p className='text-base sm:text-lg xl:text-2xl text-gray-700 dark:text-gray-300 mb-4'>
                 Discover the quirky, adorable, and sometimes surprising world of our beloved bunny companion!
               </p>
               <div className='flex flex-wrap gap-2'>
@@ -92,7 +92,7 @@ export const FunFactsTab = () => {
                 <img
                   src='/assets/images/gallery/beep.jfif'
                   alt='Toqui the bunny'
-                  className='w-full h-52 md:h-64 object-cover rounded-md'
+                  className='w-full h-full object-cover rounded-md'
                 />
                 <div className='absolute -bottom-3 -right-3 bg-yellow-400 text-gray-900 font-bold px-4 py-1 rounded-full transform rotate-12 shadow-md'>
                   Did you know?

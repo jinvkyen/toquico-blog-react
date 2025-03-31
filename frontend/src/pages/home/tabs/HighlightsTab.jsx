@@ -2,10 +2,13 @@ import { VideoCameraSlash, ArrowRight, Lightbulb } from "@phosphor-icons/react";
 import AnimatedContent from "@/components/with-motion/AnimatedContent";
 import ColourfulText from "@/components/ui/colourful-text";
 import { Link } from "react-router-dom";
+import SplashCursor from "@/animations/SplashCursor/SplashCursor";
+
 export const HighlightsTab = () => {
   return (
     <div className='min-h-screen flex items-center justify-center px-4 py-4 font-satoshi'>
       <div className='flex flex-col'>
+        <SplashCursor />
         <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-4 md:p-8 mx-auto'>
           {/* Main Hero Content */}
           <AnimatedContent
@@ -112,131 +115,131 @@ export const HighlightsTab = () => {
             {/* Bottom Sections */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-12 cursor-pointer'>
               {/* Left Card - Timeline */}
-              <div className='md:bg-pink-50 md:p-6 rounded-3xl'>
-                <div className='bg-white rounded-xl shadow-md overflow-hidden w-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1'>
-                  <div className='relative'>
-                    <img
-                      src='/assets/images/timeline.png'
-                      alt='Timeline visualization'
-                      className='w-full h-48 object-cover'
-                    />
-                    <div className='absolute top-4 left-4 bg-pink-500 text-white text-tiny px-3 py-1 rounded-full font-medium'>
-                      Featured
-                    </div>
-                  </div>
-
-                  <div className='p-6'>
-                    <div className='flex items-center mb-3'>
-                      <div className='w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3'>
-                        <svg
-                          xmlns='http://www.w3.org/2000/svg'
-                          className='h-5 w-5 text-pink-500'
-                          viewBox='0 0 20 20'
-                          fill='currentColor'>
-                          <path
-                            fillRule='evenodd'
-                            d='M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z'
-                            clipRule='evenodd'
-                          />
-                        </svg>
+              <Link to='/timeline'>
+                <div className='md:bg-pink-50 md:p-6 rounded-3xl'>
+                  <div className='bg-white rounded-xl shadow-md overflow-hidden w-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1'>
+                    <div className='relative'>
+                      <img
+                        src='/assets/images/timeline.png'
+                        alt='Timeline visualization'
+                        className='w-full h-48 object-cover'
+                      />
+                      <div className='absolute top-4 left-4 bg-pink-500 text-white text-tiny px-3 py-1 rounded-full font-medium'>
+                        Featured
                       </div>
-                      <h2 className='text-base md:text-xl font-bold text-gray-800'>Timeline</h2>
                     </div>
 
-                    <p className='text-gray-600 mb-4 text-base leading-relaxed'>
-                      It is a journey of love, care, and adventure that we have shared with Toqui, and we hope you enjoy
-                      it.
-                    </p>
+                    <div className='p-6'>
+                      <div className='flex items-center mb-3'>
+                        <div className='w-8 h-8 bg-pink-100 rounded-full flex items-center justify-center mr-3'>
+                          <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            className='h-5 w-5 text-pink-500'
+                            viewBox='0 0 20 20'
+                            fill='currentColor'>
+                            <path
+                              fillRule='evenodd'
+                              d='M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z'
+                              clipRule='evenodd'
+                            />
+                          </svg>
+                        </div>
+                        <h2 className='text-base md:text-xl font-bold text-gray-800'>Timeline</h2>
+                      </div>
 
-                    <div className='flex justify-between items-center'>
-                      <Link to='timeline'>
+                      <p className='text-gray-600 mb-4 text-base leading-relaxed'>
+                        It is a journey of love, care, and adventure that we have shared with Toqui, and we hope you
+                        enjoy it.
+                      </p>
+
+                      <div className='flex justify-between items-center'>
                         <p className='inline-flex items-center text-pink-600 font-medium text-sm hover:text-pink-700 transition-colors'>
                           Explore Toqui's timeline <ArrowRight size={14} />
                         </p>
-                      </Link>
 
-                      <div className='flex -space-x-2'>
-                        <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-red-400 border-2 border-white'>
-                          {/* timeline avatars */}
-                          <img
-                            src='https://i.pinimg.com/736x/94/c8/b5/94c8b53941b80c2b1e7c753485c0eca3.jpg'
-                            alt='Avatars'
-                            className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
-                          />
-                        </div>
-                        <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-yellow-400 border-2 border-white'>
-                          <img
-                            src='https://i.pinimg.com/736x/c0/4f/81/c04f81d2cf2e7d964ee87f3250cb4eb1.jpg'
-                            alt='Avatars'
-                            className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
-                          />
-                        </div>
-                        <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-orange-400 border-2 border-white'>
-                          <img
-                            src='https://i.pinimg.com/736x/15/55/0e/15550ee5c7a0d613ffde4f1d1c6385da.jpg'
-                            alt='Avatars'
-                            className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
-                          />
+                        <div className='flex -space-x-2'>
+                          <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-red-400 border-2 border-white'>
+                            {/* timeline avatars */}
+                            <img
+                              src='https://i.pinimg.com/736x/94/c8/b5/94c8b53941b80c2b1e7c753485c0eca3.jpg'
+                              alt='Avatars'
+                              className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
+                            />
+                          </div>
+                          <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-yellow-400 border-2 border-white'>
+                            <img
+                              src='https://i.pinimg.com/736x/c0/4f/81/c04f81d2cf2e7d964ee87f3250cb4eb1.jpg'
+                              alt='Avatars'
+                              className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
+                            />
+                          </div>
+                          <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-orange-400 border-2 border-white'>
+                            <img
+                              src='https://i.pinimg.com/736x/15/55/0e/15550ee5c7a0d613ffde4f1d1c6385da.jpg'
+                              alt='Avatars'
+                              className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
 
               {/* Right Card - Fun Facts */}
-              <div className='md:bg-yellow-50 md:p-6 rounded-3xl'>
-                <div className='bg-white rounded-xl shadow-md overflow-hidden w-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1'>
-                  <div className='relative'>
-                    <img
-                      src='/assets/images/funfacts.png'
-                      alt='Learning dashboard'
-                      className='w-full h-48 object-cover'
-                    />
-                    <div className='absolute top-4 left-4 bg-yellow-500 text-white text-tiny px-3 py-1 rounded-full font-medium'>
-                      Updated
-                    </div>
-                  </div>
-
-                  <div className='p-6'>
-                    <div className='flex items-center mb-3'>
-                      <div className='w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3'>
-                        <Lightbulb size={20} />
+              <Link to='/fun-facts'>
+                <div className='md:bg-yellow-50 md:p-6 rounded-3xl'>
+                  <div className='bg-white rounded-xl shadow-md overflow-hidden w-full transition-transform duration-300 hover:shadow-lg hover:-translate-y-1'>
+                    <div className='relative'>
+                      <img
+                        src='/assets/images/funfacts.png'
+                        alt='Learning dashboard'
+                        className='w-full h-48 object-cover'
+                      />
+                      <div className='absolute top-4 left-4 bg-yellow-500 text-white text-tiny px-3 py-1 rounded-full font-medium'>
+                        Updated
                       </div>
-                      <h2 className='text-xl font-bold text-gray-800'>Fun Facts</h2>
                     </div>
 
-                    <p className='text-gray-600 mb-4 text-base leading-relaxed'>
-                      Discover quirky and delightful information about our beloved pet that will make your day.
-                    </p>
-
-                    <div className='flex items-center justify-between'>
-                      <a
-                        href='/dashboard'
-                        className='inline-flex items-center text-yellow-600 font-medium text-sm hover:text-yellow-700 transition-colors'>
-                        View Fascinating Facts <ArrowRight size={14} />
-                      </a>
-
-                      <div className='flex -space-x-2'>
-                        <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-blue-400 border-2 border-white'>
-                          <img
-                            src='https://i.pinimg.com/736x/81/24/e4/8124e43da43e1d06dcdbca15f22a0cd9.jpg'
-                            alt='Avatars'
-                            className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
-                          />
+                    <div className='p-6'>
+                      <div className='flex items-center mb-3'>
+                        <div className='w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3'>
+                          <Lightbulb size={20} />
                         </div>
-                        <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-red-400 border-2 border-white'>
-                          <img
-                            src='https://i.pinimg.com/736x/be/c4/7d/bec47dd2c243e8200774c9d5a7dcdb4e.jpg'
-                            alt='Avatars'
-                            className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
-                          />
+                        <h2 className='text-xl font-bold text-gray-800'>Fun Facts</h2>
+                      </div>
+
+                      <p className='text-gray-600 mb-4 text-base leading-relaxed'>
+                        Discover quirky and delightful information about our beloved pet that will make your day.
+                      </p>
+
+                      <div className='flex items-center justify-between'>
+                        <p className='inline-flex items-center text-yellow-600 font-medium text-sm hover:text-yellow-700 transition-colors'>
+                          View Fascinating Facts <ArrowRight size={14} />
+                        </p>
+
+                        <div className='flex -space-x-2'>
+                          <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-blue-400 border-2 border-white'>
+                            <img
+                              src='https://i.pinimg.com/736x/81/24/e4/8124e43da43e1d06dcdbca15f22a0cd9.jpg'
+                              alt='Avatars'
+                              className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
+                            />
+                          </div>
+                          <div className='w-6 h-6 md:w-10 md:h-10 rounded-full bg-red-400 border-2 border-white'>
+                            <img
+                              src='https://i.pinimg.com/736x/be/c4/7d/bec47dd2c243e8200774c9d5a7dcdb4e.jpg'
+                              alt='Avatars'
+                              className='w-6 h-6 md:w-10 md:h-10 object-cover rounded-full mr-3'
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             </div>
           </AnimatedContent>
         </div>

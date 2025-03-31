@@ -26,7 +26,7 @@ function Contents() {
             About <span className='text-pink-800 font-black'>Her</span>
           </h2>
           <div className='text-gray-900 text-left'>
-            <p className='text-base'>
+            <p className='text-base text-justify'>
               She was born in a different home, where she lived with her mother and sister. As she grew older, she and
               her sibling were given away by their previous owners. Her new owner bought her just before his
               granddaughter’s birthday. In her new household, her birthday is celebrated on December 18, 2019.
