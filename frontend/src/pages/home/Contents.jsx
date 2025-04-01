@@ -1,66 +1,188 @@
-import { X } from "@phosphor-icons/react";
-import React, { useState, useRef } from "react";
 import { Personalities } from "@/components/with-motion/Personalities";
 import AccordionItem from "@/components/ui/AccordionItem";
 import BlogCard from "@/components/ui/BlogCard";
 import { AppleGallery } from "@/components/with-motion/AppleGallery";
+import React, { useState, useRef } from "react";
+import { X, Heart, PawPrint, Star } from "@phosphor-icons/react";
+import MarqueeB from "@/components/with-motion/MarqueeB";
 
 function Contents() {
-  const [isVisible, setIsVisible] = useState(true);
-  const anchorRef = useRef(null);
+  const [isTooltipVisible, setIsTooltipVisible] = useState(true);
+  const [activeTab, setActiveTab] = useState("story");
+  const tooltipRef = useRef(null);
+
+  // Age
+  const ageInMonths = 5;
+
+  // Nicknames organized by family member
+  const nicknames = {
+    Lolo: ["Toki"],
+    Lola: ["Toquilicious"],
+    "Tita Yaya": ["Beb", "Bebi", "Bebeep", "Ebeb", "Baby", "Bbitt", "Anak", "Babycorn"],
+    Mama: ["Anak", "Bebi", "Ebebs", "Babycorndog", "Bibbi"],
+  };
   return (
     <div id='about-her' className='container mx-auto font-satoshi my-10 px-0 w-full'>
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-2 place-items-center'>
-        {/* Column 1 */}
-        <div className='col-span-1'>
-          <img
-            src='/assets/images/desk-toqs.png'
-            className='md:ml-16 h-auto w-80 flex-grow object-cover rounded-full bg-gradient-to-r from-yellow-50 to-pink-800'
-            alt='Toquipush'
-          />
-        </div>
+      <div className='container mx-auto px-0'>
+        <h2 className='text-center text-4xl md:text-5xl font-bold mb-10'>
+          About <span className='text-pink-600'>Her</span>{" "}
+          <Heart className='inline-block text-pink-500 ml-2' size={50} />
+        </h2>
 
-        {/* Column 2 */}
-        <div className='rounded-lg col-span-2 justify-center items-center mt-0 md:ml-24 md:mr-20 mx-auto ml-0'>
-          <h2 className='mb-6 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium'>
-            About <span className='text-pink-800 font-black'>Her</span>
-          </h2>
-          <div className='text-gray-900 text-left'>
-            <p className='text-base text-justify'>
-              She was born in a different home, where she lived with her mother and sister. As she grew older, she and
-              her sibling were given away by their previous owners. Her new owner bought her just before his
-              granddaughter’s birthday. In her new household, her birthday is celebrated on December 18, 2019.
-            </p>
-            <br />
-            <p className='text-base'>
-              She is 5{" "}
-              <span
-                ref={anchorRef}
-                className='relative inline-block hover:text-toquiAccent underline cursor-pointer'
-                onClick={() => setIsVisible(!isVisible)}>
-                months
-              </span>{" "}
-              old. I know she will not get older than that (I doubt it). We are deeply grateful to have her by my side,
-              and it’s a joy to share her story with you.
-            </p>
-            {isVisible && (
-              <div
-                className='absolute -mt-16 z-10 bg-gray-50 shadow-lg rounded-lg p-4 text-white
+        {/* Profile Card & Image Section */}
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12'>
+          {/* Image with decorative elements */}
+          <div className='relative flex justify-center'>
+            <div className='absolute inset-0 bg-yellow-300 rounded-full blur-3xl opacity-20'></div>
+            <div className='absolute -top-6 -right-4 w-20 h-20 bg-pink-400 rounded-full blur-xl opacity-60'></div>
+            <div className='absolute -bottom-8 -left-4 w-16 h-16 bg-yellow-400 rounded-full blur-xl opacity-70'></div>
+
+            <img
+              src='/assets/images/desk-toqs.png'
+              className='relative z-10 w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl bg-gradient-to-r from-yellow-50 to-pink-700/60 shadow-xl transform hover:scale-105 transition-transform duration-300'
+              alt='Toqui'
+            />
+
+            {/* Floating paw prints */}
+            <PawPrint className='absolute top-12 right-12 text-pink-400 animate-bounce' size={30} />
+            <PawPrint className='absolute bottom-16 left-10 text-yellow-500 animate-bounce delay-100' size={37} />
+            <PawPrint className='absolute top-28 left-14 text-pink-300 animate-bounce delay-200' size={42} />
+          </div>
+
+          {/* Profile Card */}
+          <div className='bg-white rounded-2xl shadow-xl p-6 border-2 border-pink-200 transform hover:translate-y-[-5px] transition-all'>
+            <div className='flex items-center justify-between mb-4'>
+              <h3 className='text-2xl font-bold text-pink-600'>Profile Card</h3>
+              <Star className='text-yellow-400' fill='#FBBF24' size={47} />
+            </div>
+
+            <div className='space-y-4'>
+              <div className='border-b border-pink-100 pb-3'>
+                <p className='text-gray-500 text-sm font-medium'>Name</p>
+                <p className='font-semibold text-gray-800'>Toqui Leticia "Cloud" Marie Batumbakal Tipon</p>
+              </div>
+
+              <div className='border-b border-pink-100 pb-3'>
+                <p className='text-gray-500 text-sm font-medium'>Breed</p>
+                <div className='flex items-center'>
+                  <p className='font-semibold text-gray-800'>New Zealand Rabbit</p>
+                  <div className='ml-2 bg-pink-100 p-1 rounded-md'>
+                    <img
+                      src='/api/placeholder/120/80'
+                      alt='New Zealand Map'
+                      className='h-6 w-10 object-cover rounded'
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className='border-b border-pink-100 pb-3'>
+                <p className='text-gray-500 text-sm font-medium'>Age</p>
+                <p className='font-semibold text-gray-800'>
+                  <span
+                    className='text-pink-500 underline cursor-pointer'
+                    onClick={() => setIsTooltipVisible(true)}
+                    ref={tooltipRef}>
+                    {ageInMonths} months
+                  </span>
+                  {isTooltipVisible && (
+                    <div
+                      className='absolute left-28 md:left-32 -mt-16 z-10 bg-gray-50 shadow-lg rounded-lg p-4 text-white
             w-56 flex flex-col items-center'>
-                <button
-                  className='absolute right-0 top-0 bg-transparent rounded-md p-4
+                      <button
+                        className='absolute right-0 left top-0 bg-transparent rounded-md p-4
               text-black transition-all duration-300 ease-in-out'
-                  onClick={() => setIsVisible(false)}>
-                  <X size={16} />
-                </button>
-                <p className='text-center text-gray-500 text-base mt-4'>
-                  Please do not mention "years" 'cause it's very rude. thnx 🐰
+                        onClick={() => setIsTooltipVisible(false)}>
+                        <X size={16} />
+                      </button>
+                      <p className='text-center text-gray-500 text-base mt-4'>
+                        Please do not mention "years" 'cause it's very rude. thnx 🐰
+                      </p>
+                    </div>
+                  )}
                 </p>
               </div>
-            )}
+            </div>
           </div>
         </div>
+
+        {/* Tabs for Story and Nicknames */}
+        <div className='bg-white rounded-2xl shadow-xl p-6 mb-10 border-2 border-pink-200'>
+          <div className='flex mb-6 border-b border-pink-100'>
+            <button
+              className={`px-4 py-2 font-medium ${
+                activeTab === "story" ? "text-pink-600 border-b-2 border-pink-500" : "text-gray-500"
+              }`}
+              onClick={() => setActiveTab("story")}>
+              Her Story
+            </button>
+            <button
+              className={`px-4 py-2 font-medium ${
+                activeTab === "nicknames" ? "text-pink-600 border-b-2 border-pink-500" : "text-gray-500"
+              }`}
+              onClick={() => setActiveTab("nicknames")}>
+              Nicknames
+            </button>
+          </div>
+
+          {activeTab === "story" && (
+            <div className='prose max-w-none text-balance leading-relaxed'>
+              <div className='bg-pink-50 p-6 rounded-xl border-l-4 border-pink-300 italic text-gray-700'>
+                <p className='text-pink-800 mb-4'>Dearest Toqui,</p>
+                <p className='mb-3'>
+                  You came into our lives from another home, where you once lived with your mother and sister. It was
+                  our first time caring for a rabbit, so everything was new to us. We never knew how much joy a little
+                  bundle of fur could bring.
+                </p>
+                <p className='mb-3'>
+                  At just 5 months old (and let's keep it that way!), you've already filled our days with laughter,
+                  occasional furniture destruction, and endless love.
+                </p>
+                <p className='mb-3'>
+                  Every morning, when I see your twitching nose and curious eyes, I'm reminded of how fortunate we are
+                  to have you as part of our family.
+                </p>
+                <p className='text-right font-medium'>
+                  With all our love,
+                  <br />
+                  Your Humans
+                </p>
+              </div>
+            </div>
+          )}
+
+          {activeTab === "nicknames" && (
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+              {Object.entries(nicknames)
+                .sort()
+                .map(([familyMember, names]) => (
+                  <div
+                    key={familyMember}
+                    className='bg-gradient-to-r from-pink-50 to-yellow-50 p-4 rounded-xl border border-pink-200'>
+                    <h4 className='font-bold text-gray-700 mb-2'>{familyMember} calls her:</h4>
+                    <div className='flex flex-wrap gap-2'>
+                      {names.sort().map((nickname) => (
+                        <span
+                          key={nickname}
+                          className='bg-white px-3 py-1 rounded-full text-sm font-medium text-gray-600 border border-pink-100'>
+                          {nickname}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+            </div>
+          )}
+        </div>
       </div>
+      {/* Marquee of non-edible things */}
+
+      <MarqueeB />
+
+      {/* Add some floating decorative elements */}
+      <div className='fixed -z-10 top-1/4 left-10 w-16 h-16 bg-pink-300 rounded-full blur-xl opacity-20 animate-float'></div>
+      <div className='fixed -z-10 bottom-1/3 right-10 w-20 h-20 bg-yellow-300 rounded-full blur-xl opacity-30 animate-float delay-700'></div>
+
       {/* Personality Traits */}
       <div className='mt-32 md:p-12 rounded-lg col-span-2 flex flex-col justify-center items-center'>
         <h2 className='mb-2 md:mb-24 text-3xl md:text-4xl text-dark dark:text-white sm:text-[40px]/[48px] font-medium leading-tight'>
@@ -72,7 +194,7 @@ function Contents() {
       </div>
       {/* Favorite Foods - FAQ */}
       <section className='relative z-20 overflow-hidden dark:bg-dark lg:pb-[90px] lg:pt-[120px]'>
-        <div className='container mx-auto'>
+        <div className='container mx-auto px-0'>
           <div className='flex flex-wrap'>
             <div className='w-full'>
               <div className='mx-auto mb-[60px] max-w-[520px] text-center lg:mb-20'>

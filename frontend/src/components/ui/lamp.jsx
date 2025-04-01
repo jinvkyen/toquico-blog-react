@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { ArrowCircleDown } from "@phosphor-icons/react";
+import Aurora from "@/backgrounds/Aurora/Aurora";
 
 export default function Lamp() {
   return (
@@ -16,7 +17,7 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='bg-gradient-to-br from-pink-50 to-pink-500 py-4 bg-clip-text text-center text-3xl md:text-5xl font-black tracking-tight text-transparent lg:text-7xl'>
+        className='bg-gradient-to-br from-pink-50 to-pink-400/70 py-2 bg-clip-text text-center text-3xl md:text-5xl font-black tracking-tight text-transparent lg:text-7xl'>
         Bebi's Timeline <br />
       </motion.h1>
       <motion.p
@@ -27,12 +28,12 @@ export default function Lamp() {
           duration: 0.8,
           ease: "easeInOut",
         }}
-        className='flex flex-col items-center justify-center bg-gradient-to-br leading-tight -mt-8 md:-mt-12 from-pink-100 to-pink-500 py-4 bg-clip-text text-center text-base md:text-xl font-medium tracking-tight text-transparent'>
-        Follow the mini adventures of our beloved pet. <br />
-        <ArrowCircleDown
-          size={32}
-          className='relative top-0 mt-20 text-pink-400/90 animate-bounce transition ease-in-out duration-900'
-        />
+        className='flex flex-col items-center justify-center bg-gradient-to-br leading-tight -mt-8 md:-mt-12 from-pink-200 to-pink-400/70 py-4 bg-clip-text text-center text-base md:text-xl font-medium tracking-tight text-transparent'>
+        Follow the mini adventures of our beloved pet. <br /> <br/>
+          <ArrowCircleDown
+            size={40}
+            className='relative top-20 -mt-20 text-pink-200/50 animate-bounce transition ease-in-out duration-900'
+          />
       </motion.p>
     </LampContainer>
   );
@@ -45,7 +46,7 @@ export const LampContainer = ({ children, className }) => {
         "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-pink-950 w-full z-0",
         className
       )}>
-      <div className='relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0 '>
+      <div className='relative flex w-full flex-1 scale-y-125 items-center justify-center isolate z-0'>
         <motion.div
           initial={{ opacity: 0.5, width: "15rem" }}
           whileInView={{ opacity: 1, width: "20rem" }}
@@ -98,7 +99,7 @@ export const LampContainer = ({ children, className }) => {
           }}
           className='absolute inset-auto z-50 h-0.5 !w-[20rem] -translate-y-[7rem] bg-pink-300 '></motion.div>
 
-        <div className='absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-pink-950 '></div>
+        <div className='absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-pink-950'></div>
       </div>
       <div className='relative z-50 flex -translate-y-80 flex-col items-center px-5'>{children}</div>
     </div>

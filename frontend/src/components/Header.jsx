@@ -125,6 +125,16 @@ function Header() {
                   }>
                   Fun Facts
                 </NavLink>
+                <NavLink
+                  to='/login'
+                  onClick={handleNavLinkClick}
+                  className={({ isActive }) =>
+                    isActive
+                      ? "font-satoshi text-xl text-white font-bold"
+                      : "font-satoshi text-lg font-normal text-pink-900 drop-shadow-lg hover:text-pink-900/60 transition-colors bg-white py-2 px-4 rounded-full"
+                  }>
+                  Login
+                </NavLink>
               </div>
             </nav>
           </>

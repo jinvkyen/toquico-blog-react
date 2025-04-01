@@ -36,7 +36,7 @@ const Navbar = () => {
           <div className='flex items-center space-x-4'>
             <Link to='/' className='logo flex items-center space-x-4 z-50 mr-8 drop-shadow-lg'>
               <img src='/assets/rabbit.png' alt='Toqui Logo' className='w-auto h-12 p-2 rounded-full bg-pink-700' />{" "}
-              <p className='text-gray-800 hover:text-gray-800/70 text-2xl font-black'>toqui co.</p>
+              <p className='text-gray-800 hover:text-gray-800/70 text-lg lg:text-2xl font-black'>toqui co.</p>
             </Link>
 
             <div className='hidden md:block relative w-64'>
