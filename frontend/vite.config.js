@@ -22,4 +22,8 @@ export default defineConfig({
   server: {
     historyApiFallback: true,
   },
+  proxy: {
+    "/upload-banner": "http://localhost:5000",
+    "/blogs": "http://localhost:5000",
+  },
 });

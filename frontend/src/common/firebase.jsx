@@ -35,4 +35,6 @@ export const authWithGoogle = async () => {
   return user;
 };
 
+
 export default app;
+

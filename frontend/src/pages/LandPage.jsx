@@ -13,7 +13,7 @@ const LandingPage = () => {
           <div className='container mx-auto h-full md:p-10 px-0'>
             <header className='container px-4 lg:flex items-center h-full text-gray-900'>
               <div className='w-auto xl:-ml-14 mt-12 md:mt-0'>
-                <h1 className='text-3xl sm:text-4xl md:5xl lg:text-6xl font-bold leading-tight mb-4'>
+                <h1 className='text-4xl md:5xl lg:text-6xl font-bold leading-tight mb-4'>
                   A cozy hub for <span className='text-pink-700/90 border-pink-700/90 border-b-8'>fluff butt</span> care and
                   cuteness! 🐇
                 </h1>

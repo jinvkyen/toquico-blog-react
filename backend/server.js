@@ -8,10 +8,11 @@ import jwt from "jsonwebtoken";
 import cors from "cors";
 import admin from "firebase-admin";
 import { getAuth } from "firebase-admin/auth";
+import multer from "multer";
+import path from "path";
 
 // import service account key
 import { readFileSync } from "fs";
-import { error } from "console";
 
 const serviceAccountKey = JSON.parse(
   readFileSync(new URL("../toqui-co-firebase-adminsdk-fbsvc-4d74332063.json", import.meta.url))
@@ -195,7 +196,7 @@ server.post("/google-auth", async (req, res) => {
         //login
         if (!user.google_auth) {
           return res.status(403).json({
-            error: "The email is signed up without google. Please log in with password to access the account.",
+            error: "The email is signed up without google or github. Please log in with password to access the account.",
           });
         }
       } else {
@@ -224,6 +225,35 @@ server.post("/google-auth", async (req, res) => {
       return res.status(500).json({ error: "Failed to authenticate with Google, try another account." });
     });
 });
+
+// file uppload
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage: storage });
+
+import fs from "fs";
+const uploadsDir = "uploads";
+if (!fs.existsSync(uploadsDir)) {
+  fs.mkdirSync(uploadsDir);
+}
+
+server.post("/upload", upload.single("banner"), (req, res) => {
+  if (!req.file) {
+    return res.status(400).send("No file uploaded.");
+  }
+  const fileUrl = `http://localhost:${PORT}/uploads/${req.file.filename}`;
+  res.json({ url: fileUrl });
+});
+
+server.use("/uploads", express.static("uploads"));
+
 
 // listening
 server.listen(PORT, () => {

@@ -10,24 +10,20 @@ import PublicLayout from "./components/layout/PublicLayout";
 //pages
 import LandingPage from "./pages/LandPage";
 import HomePage from "./pages/home/HomePage";
-import BlogListPage from "./pages/blog/BlogListPage";
-import BlogDetailPage from "./pages/blog/BlogDetailPage";
 import ProfilePage from "./pages/auth/ProfilePage";
 import SocialFeedPage from "./pages/social/SocialFeedPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserAuthForm from "./pages/auth/UserAuthForm";
+import Editor from "./pages/blog/Editor";
 
 // tabs
 import TimelineTab from "./pages/home/tabs/TimelineTab";
 import { FunFactsTab } from "./pages/home/tabs/FunFactsTab";
 import { HighlightsTab } from "./pages/home/tabs/HighlightsTab";
 
-// import AuthProvider from "./context/AuthProvider";
-
-// Protected Route Component
-import ProtectedRoute from "./components/auth/ProtectedRoute";
-
 import { lookInSession, storeInSession } from "./common/session";
+import BlogEditor from "./pages/blog/BlogEditor";
+import PublishForm from "./pages/blog/PublishForm";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const UserContext = createContext({});
@@ -74,17 +70,18 @@ function App() {
               <Route path='timeline' element={<TimelineTab />} />
               <Route path='fun-facts' element={<FunFactsTab />} />
               <Route path='highlights' element={<HighlightsTab />} />
-              {/* not sure */}
-              {/* <Route path='blog' element={<BlogListPage />} />
-              <Route path='blog/:id' element={<BlogDetailPage />} /> */}
             </Route>
 
-            <Route path='/' element={<ProtectedLayout />}>
-              <Route path='login' element={<UserAuthForm type={"Sign In"} />} />
-              <Route path='register' element={<UserAuthForm type={"Join the Club"} />} />
-              <Route path='social' element={<SocialFeedPage />} />
-              <Route path='profile' element={<ProfilePage />} />
+            <Route element={<ProtectedLayout />}>
+              <Route path='/login' element={<UserAuthForm type={"Sign In"} />} />
+              <Route path='/register' element={<UserAuthForm type={"Join the Club"} />} />
+              <Route path='/social' element={<SocialFeedPage />} />
+              <Route path='/editor' element={<Editor />} />
+              <Route path='/profile' element={<ProfilePage />} />
             </Route>
+            {/* New Header */}
+            <Route path='/blog-editor' element={<BlogEditor />} />
+            <Route path='/publish-form' element={<PublishForm />} />
 
             {/* 404 Route */}
             <Route path='*' element={<NotFoundPage />} />

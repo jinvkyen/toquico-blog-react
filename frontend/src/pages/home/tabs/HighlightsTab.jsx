@@ -1,5 +1,5 @@
-import { VideoCameraSlash, ArrowRight, Lightbulb } from "@phosphor-icons/react";
-import AnimatedContent from "@/components/with-motion/AnimatedContent";
+import { VideoCameraSlash, ArrowRight, Lightbulb, WarningOctagon } from "@phosphor-icons/react";
+import FadeContent from "@/animations/FadeContent/FadeContent";
 import ColourfulText from "@/components/ui/colourful-text";
 import { Link } from "react-router-dom";
 import SplashCursor from "@/animations/SplashCursor/SplashCursor";
@@ -8,21 +8,13 @@ export const HighlightsTab = () => {
   return (
     <div className='min-h-screen flex items-center justify-center px-4 py-4 font-satoshi'>
       <div className='flex flex-col'>
-        <SplashCursor />
-        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-4 md:p-8 mx-auto'>
+        {/* <SplashCursor /> */}
+        <div className='bg-white rounded-3xl md:shadow-lg max-w-7xl w-full p-6 md:p-8 mx-auto'>
           {/* Main Hero Content */}
-          <AnimatedContent
-            distance={100}
-            direction='vertical'
-            reverse={false}
-            config={{ tension: 50, friction: 25 }}
-            initialOpacity={0.0}
-            animateOpacity
-            scale={1.1}
-            threshold={0.1}>
+          <FadeContent>
             <div className='flex flex-col items-center mb-12'>
               <div className='relative mb-8'>
-                <h1 className='text-2xl sm:text-5xl font-bold text-center leading-tight text-balance'>
+                <h1 className='text-2xl sm:text-6xl font-bold text-center leading-tight text-balance'>
                   Welcome to <ColourfulText text="Toqui's" /> <br />
                   <span className='relative z-20 inline-block rounded-xl'>Highlights ✨</span>
                 </h1>
@@ -241,46 +233,37 @@ export const HighlightsTab = () => {
                 </div>
               </Link>
             </div>
-          </AnimatedContent>
+          </FadeContent>
         </div>
         <div className='flex flex-col justify-center items-center mt-20 max-w-7xl w-full mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-12 gap-8'>
             <div className='md:col-span-8'>
               {/* Content Section */}
-              <AnimatedContent
-                distance={100}
-                direction='vertical'
-                reverse={false}
-                config={{ tension: 50, friction: 25 }}
-                initialOpacity={0.0}
-                animateOpacity
-                scale={1.1}
-                threshold={0.1}>
-                <div className='max-w-2xl mx-auto antialiased relative'>
-                  {dummyContent.map((item, index) => (
-                    <div key={`content-${index}`} className='mb-20'>
-                      <h2 className='bg-yellow-500/70 text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>
-                        {item.badge}
-                      </h2>
 
-                      <p className='text-xl mb-4 font-bold'>{item.title}</p>
+              <div className='max-w-2xl mx-auto antialiased relative'>
+                {dummyContent.map((item, index) => (
+                  <div key={`content-${index}`} className='mb-20'>
+                    <h2 className='bg-yellow-500/70 text-white rounded-full text-sm w-fit px-4 py-1 mb-4'>
+                      {item.badge}
+                    </h2>
 
-                      <div className='text-tiny prose prose-sm dark:prose-invert'>
-                        {item?.image && (
-                          <img
-                            src={item.image}
-                            alt='blog thumbnail'
-                            height='1000'
-                            width='1000'
-                            className='rounded-lg mb-10 object-cover'
-                          />
-                        )}
-                        {item.description}
-                      </div>
+                    <p className='text-xl mb-4 font-bold'>{item.title}</p>
+
+                    <div className='text-tiny prose prose-sm dark:prose-invert'>
+                      {item?.image && (
+                        <img
+                          src={item.image}
+                          alt='blog thumbnail'
+                          height='1000'
+                          width='1000'
+                          className='rounded-lg mb-10 object-cover'
+                        />
+                      )}
+                      {item.description}
                     </div>
-                  ))}
-                </div>
-              </AnimatedContent>
+                  </div>
+                ))}
+              </div>
             </div>
             <div className='md:col-span-4'>
               {/* Highlight of the Day */}
@@ -349,53 +332,98 @@ export const HighlightsTab = () => {
 
 const dummyContent = [
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
+    title: "First Case of GI Stasis",
     description: (
       <>
-        <p>
-          Sit duis est minim proident non nisi velit non consectetur. Esse adipisicing laboris consectetur enim ipsum
-          reprehenderit eu deserunt Lorem ut aliqua anim do. Duis cupidatat qui irure cupidatat incididunt incididunt
-          enim magna id est qui sunt fugiat. Laboris do duis pariatur fugiat Lorem aute sit ullamco. Qui deserunt non
-          reprehenderit dolore nisi velit exercitation Lorem qui do enim culpa. Aliqua eiusmod in occaecat reprehenderit
-          laborum nostrud fugiat voluptate do Lorem culpa officia sint labore. Tempor consectetur excepteur ut fugiat
-          veniam commodo et labore dolore commodo pariatur.
+        <div className='flex items-center mb-3'>
+          <div className='w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center mr-3'>
+            <WarningOctagon size={20} />
+          </div>
+          <h2 className='text-xl font-bold text-gray-800'>Take Note:</h2>
+        </div>
+        <p className='bg-yellow-50 rounded-xl p-4'>
+          Rabbits are naturally born silent creatures, and they are not prone to showing pain. This is why it is so to
+          be fully aware of your pet's behavior, habits and body language. GI stasis is a condition that occurs when the
+          digestive system slows down or stops completely. It can be caused by a variety of factors, including stress,
+          changes in diet, and underlying health issues. Symptoms of GI stasis include loss of appetite, lethargy, and
+          changes in stool production. If you notice any of these symptoms in your rabbit, it is important to seek
+          veterinary care immediately.
         </p>
       </>
     ),
-    badge: "Highlight #1",
-    image:
-      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    badge: "Highlight 1",
+    image: "/assets/images/highlights/h1.JPEG",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor
-          et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do
-          do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum
-          occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: "Highlight #2",
-    image:
-      "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=3540&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Initial Vet Visit",
+    
+    badge: "Highlight 2",
+    image: "/assets/images/highlights/h2.JPEG",
   },
   {
-    title: "Lorem Ipsum Dolor Sit Amet",
-    description: (
-      <>
-        <p>
-          Ex irure dolore veniam ex velit non aute nisi labore ipsum occaecat deserunt cupidatat aute. Enim cillum dolor
-          et nulla sunt exercitation non voluptate qui aliquip esse tempor. Ullamco ut sunt consectetur sint qui qui do
-          do qui do. Labore laborum culpa magna reprehenderit ea velit id esse adipisicing deserunt amet dolore. Ipsum
-          occaecat veniam commodo proident aliqua id ad deserunt dolor aliquip duis veniam sunt.
-        </p>
-      </>
-    ),
-    badge: "Highlight #3",
-    image:
-      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&q=80&w=3506&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Cherry With A Derp Face",
+    
+    badge: "Highlight 3",
+    image: "/assets/images/highlights/h3.JPEG",
+  },
+  {
+    title: "Initial Teeth Check",
+    
+    badge: "Highlight 4",
+    image: "/assets/images/highlights/h4.JPEG",
+  },
+  {
+    title: "Mourning Lost Veggies",
+    
+    badge: "Highlight 5",
+    image: "/assets/images/highlights/h5.JPEG",
+  },
+  {
+    title: "Wawa Moments",
+    
+    badge: "Highlight 6",
+    image: "/assets/images/highlights/h6.JPEG",
+  },
+  {
+    title: "First Taste Of Bok Choy",
+    
+    badge: "Highlight 7",
+    image: "/assets/images/highlights/h7.JPEG",
+  },
+  {
+    title: "Duct Tape",
+    
+    badge: "Highlight 8",
+    image: "/assets/images/highlights/h8.JPEG",
+  },
+  {
+    title: "Highlighted Nose",
+    
+    badge: "Highlight 9",
+    image: "/assets/images/highlights/h9.JPEG",
+  },
+  {
+    title: "First Time With A Puppy",
+    
+    badge: "Highlight 10",
+    image: "/assets/images/highlights/h10.JPEG",
+  },
+  {
+    title: "Swooosh!",
+    
+    badge: "Highlight 11",
+    image: "/assets/images/highlights/h11.JPEG",
+  },
+  {
+    title: "An Underside Of A Stingray",
+    
+    badge: "Highlight 12",
+    image: "/assets/images/highlights/h12.JPEG",
+  },
+  {
+    title: "Referenced A Meme",
+    
+    badge: "Highlight 13",
+    image: "/assets/images/highlights/h13.JPEG",
   },
 ];

@@ -55,7 +55,7 @@ export const FunFactsTab = () => {
     },
   ];
   return (
-    <div className='relative -top-16 font-satoshi'>
+    <div className='relative overflow-hidden -top-16 font-satoshi'>
       {/* Hero Section for Fun Facts */}
       <div className='bg-gradient-to-r from-pink-100 to-pink-400/50 dark:from-purple-900 dark:to-pink-900 py-12 px-4 mb-12 min-h-screen'>
         <AnimatedContent

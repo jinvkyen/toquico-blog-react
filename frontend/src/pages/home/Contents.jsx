@@ -16,9 +16,9 @@ function Contents() {
 
   // Nicknames organized by family member
   const nicknames = {
-    Lolo: ["Toki"],
-    Lola: ["Toquilicious"],
-    "Tita Yaya": ["Beb", "Bebi", "Bebeep", "Ebeb", "Baby", "Bbitt", "Anak", "Babycorn"],
+    Lolo: ["Toke", "Kurdapya"],
+    Lola: ["Toquilicious", "Atotokimamakoyan"],
+    "Tita Ninang": ["Beb", "Bebi", "Bebeep", "Ebeb", "Baby", "Bbitt", "Anak", "Babycorn", "Robbit", "Bny", "Bunuy"],
     Mama: ["Anak", "Bebi", "Ebebs", "Babycorndog", "Bibbi"],
   };
   return (
@@ -59,7 +59,7 @@ function Contents() {
             <div className='space-y-4'>
               <div className='border-b border-pink-100 pb-3'>
                 <p className='text-gray-500 text-sm font-medium'>Name</p>
-                <p className='font-semibold text-gray-800'>Toqui Leticia "Cloud" Marie Batumbakal Tipon</p>
+                <p className='font-semibold text-gray-800'>Toqui "Cloud" Marie Batumbakal Tipon</p>
               </div>
 
               <div className='border-b border-pink-100 pb-3'>
@@ -68,7 +68,7 @@ function Contents() {
                   <p className='font-semibold text-gray-800'>New Zealand Rabbit</p>
                   <div className='ml-2 bg-pink-100 p-1 rounded-md'>
                     <img
-                      src='/api/placeholder/120/80'
+                      src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Flag-map_of_New_Zealand.svg/1200px-Flag-map_of_New_Zealand.svg.png'
                       alt='New Zealand Map'
                       className='h-6 w-10 object-cover rounded'
                     />
@@ -294,8 +294,8 @@ function Contents() {
           </div>
         </div>
 
-        {/* Optional Caption */}
-        <p className='text-tiny text-pretty text-gray-600 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
+
+        <p className='text-tiny text-pretty text-gray-700 dark:text-gray-400 mt-4 italic max-w-2xl text-center'>
           First days of Toqui enjoying her new home, December 2019.
         </p>
       </section>
